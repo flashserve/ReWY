@@ -1,0 +1,14 @@
+{
+  "name": "release-public-api-v0.1",
+  "baseline": "a59bc5df8c5841dce2169bb00e4027287197ba77",
+  "boundary": "B",
+  "timing": "synchronized eager public autograd",
+  "policy": "recompute",
+  "rounds": 30,
+  "ops": ["kda", "gdn", "gdn2", "delta"],
+  "shapes_B_T_H": [[1,512,4],[1,2048,4],[1,8192,4],[1,2048,16],[2,2048,16],[1,8192,16]],
+  "K": 128,
+  "V": 128,
+  "dtype": "bfloat16",
+  "note": "Paper shape grid; public timing differs from historical low-level measurements. No historical speedup is asserted."
+}

@@ -1,0 +1,10 @@
+ARG NPU_BASE
+FROM ${NPU_BASE}
+# Supply an image with your validated matching CANN, torch_npu and Triton-Ascend.
+WORKDIR /opt/fast-delta-rule
+COPY . .
+RUN python -m pip install 'transformers==5.21.0' 'einops==0.8.2' 'git+https://github.com/fla-org/flash-linear-attention.git@a59bc5df8c5841dce2169bb00e4027287197ba77' \
+    && python -m pip install .
+WORKDIR /workspace
+ENTRYPOINT ["fdr"]
+CMD ["doctor", "--check-sources"]

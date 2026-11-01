@@ -1,0 +1,16 @@
+# Build using containers/build_context.py; the runtime is the measured environment.
+ARG BASE_IMAGE=pytorch/pytorch:2.12.1-cuda12.6-cudnn9-devel@sha256:ecf410deda7667de18e6cf3d98ee639d848dc83d5ae7dc1419a758155fa16ccd
+FROM ${BASE_IMAGE}
+ADD runtime.tar.gz /workspace/
+ADD artifact.tar.gz /opt/fast-delta-rule/
+ADD fla.tar.gz /opt/fla/
+RUN mkdir -p /opt && ln -s /workspace/deps /opt/model-deps
+COPY runtime-manifest.json /opt/runtime-manifest.json
+COPY --chmod=755 entrypoint.sh /opt/paper-entrypoint.sh
+ENV FDR_PAPER_PLATFORM=a800
+WORKDIR /opt/fast-delta-rule
+LABEL org.opencontainers.image.source="https://github.com/flashserve/ReWY" \
+      org.opencontainers.image.title="A800 current-paper reproduction" \
+      org.opencontainers.image.description="Measured Python 3.12 / Torch 2.9.1+cu128 / Triton 3.5.1 venv; upstream system Python packages are not used."
+ENTRYPOINT ["/opt/paper-entrypoint.sh"]
+CMD ["plan"]

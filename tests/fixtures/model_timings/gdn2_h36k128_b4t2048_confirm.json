@@ -1,0 +1,962 @@
+[
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "phase_ms": {
+      "backward": 627.6587524414062
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "phase_ms": {
+      "backward": 627.684326171875
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "phase_ms": {
+      "backward": 627.7324829101562
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "phase_ms": {
+      "backward": 627.5860595703125
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "phase_ms": {
+      "backward": 627.5860595703125
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "phase_ms": {
+      "backward": 627.178466796875
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "phase_ms": {
+      "backward": 628.9879150390625
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "phase_ms": {
+      "backward": 627.473388671875
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "phase_ms": {
+      "backward": 624.8765258789062
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "phase_ms": {
+      "backward": 624.7506103515625
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "phase_ms": {
+      "backward": 624.848876953125
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "phase_ms": {
+      "backward": 624.6779174804688
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "phase_ms": {
+      "backward": 624.8775634765625
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "phase_ms": {
+      "backward": 629.233642578125
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "phase_ms": {
+      "backward": 629.1189575195312
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "phase_ms": {
+      "backward": 629.0820922851562
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "phase_ms": {
+      "backward": 629.5418701171875
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "phase_ms": {
+      "backward": 629.2664184570312
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "phase_ms": {
+      "backward": 629.2561645507812
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "phase_ms": {
+      "backward": 630.0692749023438
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "phase_ms": {
+      "backward": 629.53369140625
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "phase_ms": {
+      "backward": 629.3800659179688
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "phase_ms": {
+      "backward": 629.2265014648438
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "phase_ms": {
+      "backward": 629.4097900390625
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "phase_ms": {
+      "backward": 629.686279296875
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "phase_ms": {
+      "backward": 628.8148193359375
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "phase_ms": {
+      "backward": 628.9510498046875
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "phase_ms": {
+      "backward": 629.7579345703125
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "phase_ms": {
+      "backward": 629.6401977539062
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "phase_ms": {
+      "backward": 629.0575561523438
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "phase_ms": {
+      "backward": 539.3377075195312
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "phase_ms": {
+      "backward": 531.0679321289062
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "phase_ms": {
+      "backward": 531.44677734375
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "phase_ms": {
+      "backward": 531.4119873046875
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "phase_ms": {
+      "backward": 531.4713745117188
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "phase_ms": {
+      "backward": 531.8297729492188
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "phase_ms": {
+      "backward": 532.5045776367188
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "phase_ms": {
+      "backward": 531.5379028320312
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "phase_ms": {
+      "backward": 532.2926025390625
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "phase_ms": {
+      "backward": 531.8430786132812
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "phase_ms": {
+      "backward": 531.6566772460938
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "phase_ms": {
+      "backward": 532.0089721679688
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "phase_ms": {
+      "backward": 531.7601318359375
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "phase_ms": {
+      "backward": 532.5864868164062
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "phase_ms": {
+      "backward": 532.8507080078125
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "phase_ms": {
+      "backward": 532.8947143554688
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "phase_ms": {
+      "backward": 532.8035888671875
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "phase_ms": {
+      "backward": 532.5977783203125
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "phase_ms": {
+      "backward": 532.7472534179688
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "phase_ms": {
+      "backward": 538.2205200195312
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "phase_ms": {
+      "backward": 532.621337890625
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "phase_ms": {
+      "backward": 533.3197021484375
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "phase_ms": {
+      "backward": 532.4052734375
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "phase_ms": {
+      "backward": 534.096923828125
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "phase_ms": {
+      "backward": 533.3298950195312
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "phase_ms": {
+      "backward": 532.833251953125
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "phase_ms": {
+      "backward": 533.0401000976562
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "phase_ms": {
+      "backward": 533.4149169921875
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "phase_ms": {
+      "backward": 532.9028930664062
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "phase_ms": {
+      "backward": 533.2551879882812
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "phase_ms": {
+      "backward": 534.709228515625
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "phase_ms": {
+      "backward": 534.3754272460938
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "phase_ms": {
+      "backward": 534.6099243164062
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "phase_ms": {
+      "backward": 535.3441162109375
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "phase_ms": {
+      "backward": 535.2632446289062
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "phase_ms": {
+      "backward": 534.3262939453125
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "phase_ms": {
+      "backward": 534.9417114257812
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "phase_ms": {
+      "backward": 535.0133666992188
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "phase_ms": {
+      "backward": 534.9488525390625
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "phase_ms": {
+      "backward": 534.58740234375
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "phase_ms": {
+      "backward": 534.7706909179688
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "phase_ms": {
+      "backward": 534.1306762695312
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "phase_ms": {
+      "backward": 534.9765014648438
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "phase_ms": {
+      "backward": 534.3651733398438
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "phase_ms": {
+      "backward": 533.9627685546875
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "phase_ms": {
+      "backward": 534.6375732421875
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "phase_ms": {
+      "backward": 535.0952758789062
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "phase_ms": {
+      "backward": 534.9099731445312
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "phase_ms": {
+      "backward": 534.2300415039062
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "phase_ms": {
+      "backward": 533.212158203125
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "phase_ms": {
+      "backward": 534.4594116210938
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "phase_ms": {
+      "backward": 533.32275390625
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "phase_ms": {
+      "backward": 533.5562133789062
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "phase_ms": {
+      "backward": 534.4542846679688
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "phase_ms": {
+      "backward": 534.6160888671875
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "phase_ms": {
+      "backward": 534.3662109375
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "phase_ms": {
+      "backward": 534.0845947265625
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "phase_ms": {
+      "backward": 533.7947998046875
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "phase_ms": {
+      "backward": 534.1460571289062
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "phase_ms": {
+      "backward": 533.5234375
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "phase_ms": {
+      "backward": 632.2728881835938
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "phase_ms": {
+      "backward": 632.0025634765625
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "phase_ms": {
+      "backward": 631.7199096679688
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "phase_ms": {
+      "backward": 633.0234985351562
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "phase_ms": {
+      "backward": 631.973876953125
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "phase_ms": {
+      "backward": 633.0337524414062
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "phase_ms": {
+      "backward": 632.10595703125
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "phase_ms": {
+      "backward": 631.4127197265625
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "phase_ms": {
+      "backward": 633.1289672851562
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "phase_ms": {
+      "backward": 632.3087158203125
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "phase_ms": {
+      "backward": 633.0316772460938
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "phase_ms": {
+      "backward": 632.0465698242188
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "phase_ms": {
+      "backward": 632.6456298828125
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "phase_ms": {
+      "backward": 632.6415405273438
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "phase_ms": {
+      "backward": 631.6124267578125
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "phase_ms": {
+      "backward": 633.0040283203125
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "phase_ms": {
+      "backward": 631.4864501953125
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "phase_ms": {
+      "backward": 633.375732421875
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "phase_ms": {
+      "backward": 631.9011840820312
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "phase_ms": {
+      "backward": 632.5401611328125
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "phase_ms": {
+      "backward": 631.3912353515625
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "phase_ms": {
+      "backward": 633.565185546875
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "phase_ms": {
+      "backward": 631.3338623046875
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "phase_ms": {
+      "backward": 632.27392578125
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "phase_ms": {
+      "backward": 632.9384765625
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "phase_ms": {
+      "backward": 631.1597900390625
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "phase_ms": {
+      "backward": 632.8923950195312
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "phase_ms": {
+      "backward": 633.2037353515625
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "phase_ms": {
+      "backward": 632.5227661132812
+    }
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "phase_ms": {
+      "backward": 632.869873046875
+    }
+  }
+]

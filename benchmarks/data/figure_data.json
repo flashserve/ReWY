@@ -1,0 +1,465 @@
+{
+  "complete_speedups": {
+    "GPU": {
+      "DeltaNet": [
+        1.1469,
+        1.2152
+      ],
+      "GDN": [
+        1.1614,
+        1.2264
+      ],
+      "KDA": [
+        1.556,
+        1.8066
+      ],
+      "GDN2": [
+        1.791,
+        2.1458
+      ]
+    },
+    "A800": {
+      "DeltaNet": [
+        1.1474,
+        1.2237
+      ],
+      "GDN": [
+        1.1732,
+        1.2471
+      ],
+      "KDA": [
+        1.7943,
+        2.0832
+      ],
+      "GDN2": [
+        1.9577,
+        2.2792
+      ]
+    },
+    "NPU": {
+      "DeltaNet": [
+        1.5806,
+        1.7528
+      ],
+      "GDN": [
+        1.3739,
+        1.5142
+      ],
+      "KDA": [
+        1.5464,
+        1.6291
+      ],
+      "GDN2": [
+        2.5518,
+        2.9959
+      ]
+    }
+  },
+  "measured_complete_speedups": {
+    "GPU": {
+      "DeltaNet": {
+        "recompute": 1.1469,
+        "all": 1.2152
+      },
+      "GDN": {
+        "recompute": 1.1614,
+        "all": 1.2264
+      },
+      "KDA": {
+        "recompute": 1.556,
+        "all": 1.8066
+      },
+      "GDN2": {
+        "recompute": 1.791,
+        "all": 2.1458
+      }
+    },
+    "A800": {
+      "DeltaNet": {
+        "recompute": 1.1474,
+        "all": 1.2237
+      },
+      "GDN": {
+        "recompute": 1.1732,
+        "all": 1.2471
+      },
+      "KDA": {
+        "recompute": 1.7943,
+        "all": 2.0832
+      },
+      "GDN2": {
+        "recompute": 1.9577,
+        "all": 2.2792
+      }
+    },
+    "NPU": {
+      "DeltaNet": {
+        "recompute": 1.5806,
+        "all": 1.7528
+      },
+      "GDN": {
+        "recompute": 1.3739,
+        "all": 1.5142
+      },
+      "KDA": {
+        "recompute": 1.5464,
+        "all": 1.6291
+      },
+      "GDN2": {
+        "recompute": 2.5518,
+        "all": 2.9959
+      }
+    },
+    "H100": {
+      "DeltaNet": {
+        "recompute": 1.2065847137659769,
+        "all": 1.3045609872457153
+      },
+      "GDN": {
+        "recompute": 1.2055806353055223,
+        "all": 1.2829171314203844
+      },
+      "KDA": {
+        "recompute": 1.3263856427776957,
+        "all": 1.4212693505450749
+      },
+      "GDN2": {
+        "recompute": 1.5680174645568126,
+        "all": 1.7032820944175162
+      }
+    },
+    "H200": {
+      "DeltaNet": {
+        "recompute": 1.1775530800426406,
+        "all": 1.269733992863184
+      },
+      "GDN": {
+        "recompute": 1.1818730926788632,
+        "all": 1.250522333756203
+      },
+      "KDA": {
+        "recompute": 1.306504125963194,
+        "all": 1.3964001250525446
+      },
+      "GDN2": {
+        "recompute": 1.5407908942237856,
+        "all": 1.652661807750704
+      }
+    },
+    "950": {
+      "DeltaNet": {
+        "recompute": 1.0877906190481403
+      },
+      "GDN": {
+        "recompute": 1.2192361404424878
+      },
+      "KDA": {
+        "all": 1.303111062050423,
+        "recompute": 1.217684478791312
+      },
+      "GDN2": {
+        "all": 2.894511372828054,
+        "recompute": 2.4301328503221975
+      }
+    }
+  },
+  "complete_boundaries": {
+    "GPU": "complete low-level graph B",
+    "A800": "complete low-level graph B",
+    "NPU": "complete low-level graph B",
+    "H100": "complete low-level graph B",
+    "H200": "complete low-level graph B",
+    "950": "public autograd synchronized eager B"
+  },
+  "component_only_rows": [
+    [
+      "KDA",
+      "RTX 5070Ti",
+      "1.0845/1.1160",
+      "1.1996/1.2600"
+    ],
+    [
+      "KDA",
+      "NPU",
+      "1.1402/1.1660",
+      "1.3675/1.4179"
+    ],
+    [
+      "GDN",
+      "RTX 5070Ti",
+      "1.0490/1.0852",
+      "1.0214/1.0323"
+    ],
+    [
+      "GDN",
+      "NPU",
+      "1.0733/1.0785",
+      "1.0538/1.0658"
+    ],
+    [
+      "GDN2",
+      "RTX 5070Ti",
+      "1.1732/1.2026",
+      "1.2851/1.3407"
+    ],
+    [
+      "GDN2",
+      "NPU",
+      "1.1103/1.1217",
+      "2.0834/2.3268"
+    ]
+  ],
+  "conditional_rows": [
+    [
+      "KDA",
+      "Matrix intra",
+      "1.1070/1.1366",
+      "1.1308/1.1490"
+    ],
+    [
+      "GDN",
+      "Gram elimination",
+      "1.0485/1.0663",
+      "1.0708/1.0889"
+    ],
+    [
+      "GDN2",
+      "Matrix intra",
+      "1.2364/1.2911",
+      "1.2248/1.2876"
+    ]
+  ],
+  "memory_percent": [
+    {
+      "operator": "DeltaNet",
+      "device": "GPU",
+      "policy": "recompute",
+      "reduction_percent": 0.0
+    },
+    {
+      "operator": "GDN",
+      "device": "GPU",
+      "policy": "recompute",
+      "reduction_percent": 0.11954572624028881
+    },
+    {
+      "operator": "KDA",
+      "device": "GPU",
+      "policy": "recompute",
+      "reduction_percent": 16.904145077720212
+    },
+    {
+      "operator": "GDN2",
+      "device": "GPU",
+      "policy": "recompute",
+      "reduction_percent": 13.319458896982306
+    },
+    {
+      "operator": "DeltaNet",
+      "device": "GPU",
+      "policy": "all",
+      "reduction_percent": 0.0
+    },
+    {
+      "operator": "GDN",
+      "device": "GPU",
+      "policy": "all",
+      "reduction_percent": 0.19361084220715918
+    },
+    {
+      "operator": "KDA",
+      "device": "GPU",
+      "policy": "all",
+      "reduction_percent": 23.813868613138688
+    },
+    {
+      "operator": "GDN2",
+      "device": "GPU",
+      "policy": "all",
+      "reduction_percent": 17.367706919945725
+    },
+    {
+      "operator": "DeltaNet",
+      "device": "A800",
+      "policy": "recompute",
+      "reduction_percent": 7.669263031755547
+    },
+    {
+      "operator": "GDN",
+      "device": "A800",
+      "policy": "recompute",
+      "reduction_percent": 7.770472205618651
+    },
+    {
+      "operator": "KDA",
+      "device": "A800",
+      "policy": "recompute",
+      "reduction_percent": 16.900129533678765
+    },
+    {
+      "operator": "GDN2",
+      "device": "A800",
+      "policy": "recompute",
+      "reduction_percent": 16.649323621227886
+    },
+    {
+      "operator": "DeltaNet",
+      "device": "A800",
+      "policy": "all",
+      "reduction_percent": 12.439261418853253
+    },
+    {
+      "operator": "GDN",
+      "device": "A800",
+      "policy": "all",
+      "reduction_percent": 12.584704743465636
+    },
+    {
+      "operator": "KDA",
+      "device": "A800",
+      "policy": "all",
+      "reduction_percent": 23.808211678832116
+    },
+    {
+      "operator": "GDN2",
+      "device": "A800",
+      "policy": "all",
+      "reduction_percent": 21.709633649932158
+    },
+    {
+      "operator": "DeltaNet",
+      "device": "NPU",
+      "policy": "recompute",
+      "reduction_percent": 15.089892351942968
+    },
+    {
+      "operator": "GDN",
+      "device": "NPU",
+      "policy": "recompute",
+      "reduction_percent": 14.999591843398473
+    },
+    {
+      "operator": "KDA",
+      "device": "NPU",
+      "policy": "recompute",
+      "reduction_percent": 6.246369059964019
+    },
+    {
+      "operator": "GDN2",
+      "device": "NPU",
+      "policy": "recompute",
+      "reduction_percent": 24.15681863400777
+    },
+    {
+      "operator": "DeltaNet",
+      "device": "NPU",
+      "policy": "all",
+      "reduction_percent": 20.449273592967888
+    },
+    {
+      "operator": "GDN",
+      "device": "NPU",
+      "policy": "all",
+      "reduction_percent": 20.30328745569139
+    },
+    {
+      "operator": "KDA",
+      "device": "NPU",
+      "policy": "all",
+      "reduction_percent": 8.5765575536753
+    },
+    {
+      "operator": "GDN2",
+      "device": "NPU",
+      "policy": "all",
+      "reduction_percent": 30.99554001913406
+    }
+  ],
+  "component_memory_rows": [
+    [
+      "KDA",
+      "RTX 5070Ti",
+      "2.50/2.50",
+      "130.47/130.47",
+      "0.00/0.00",
+      "127.97/127.97"
+    ],
+    [
+      "KDA",
+      "NPU",
+      "51.50/51.50",
+      "0.00/0.00",
+      "51.50/51.50",
+      "0.00/0.00"
+    ],
+    [
+      "GDN2",
+      "NPU",
+      "53.25/53.25",
+      "0.00/0.00",
+      "245.25/245.25",
+      "192.00/192.00"
+    ],
+    [
+      "GDN",
+      "RTX 5070Ti",
+      "32.00/32.00",
+      "0.00/0.00",
+      "32.00/32.00",
+      "0.00/0.00"
+    ],
+    [
+      "GDN",
+      "NPU",
+      "64.00/64.00",
+      "0.00/0.00",
+      "93.00/93.00",
+      "29.00/29.00"
+    ]
+  ],
+  "speedup_baseline": "original for complete/standalone; fixed companion for conditional",
+  "no_new_measurements": true,
+  "historical_marked_complete_pairs": [
+    [
+      "A800",
+      "GDN2"
+    ],
+    [
+      "A800",
+      "KDA"
+    ],
+    [
+      "GPU",
+      "GDN2"
+    ],
+    [
+      "NPU",
+      "GDN2"
+    ],
+    [
+      "NPU",
+      "KDA"
+    ]
+  ],
+  "complete_values_plotted": 46,
+  "complete_memory_values_plotted": 24,
+  "component_speedup_values_plotted": 36,
+  "component_memory_cells_plotted": 20,
+  "rendered_artist_counts": {
+    "backward_speedups": 46,
+    "component_speedups": 36,
+    "backward_memory_reduction": 24,
+    "component_memory": 20
+  },
+  "missing_values": 0,
+  "display_selection": "Measured positive speedup aggregates; component-memory rows require all four effects nonnegative. Raw samples are not filtered.",
+  "precision_status": "Displayed measurements retain dagger markers for historical GPU and Ascend910_9382 matrix-consumer paths subject to the recorded precision-contract limitation.",
+  "sources": [
+    "data/paper_data.json",
+    "data/h100_data.json",
+    "data/h200_data.json",
+    "data/npu950_data.json",
+    "data/memory.json",
+    "data/component_tables.json"
+  ]
+}

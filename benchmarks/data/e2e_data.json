@@ -1,0 +1,644 @@
+{
+  "date": "2026-10-29",
+  "primary_claim": "complete operator backward; full-model backward supplementary",
+  "e2e_display_metric": "complete model backward only: original/optimized median B and B speedup",
+  "e2e_display_comparison": "original versus final optimized implementation; no full-model component ablations",
+  "table_rows": [
+    {
+      "case": "b1t2048gpu0r2",
+      "family": "KDA",
+      "device": "A800-SXM4-80GB",
+      "group": "a800",
+      "batch": 1,
+      "length": 2048,
+      "heads": 16,
+      "parameters": 1390941568,
+      "scope": "FLA_default",
+      "timing": "CUDA event interval around complete loss.backward inside updating graph",
+      "policy": "R",
+      "variants": {
+        "original": {
+          "backward_ms": 112.54681396484375,
+          "samples": 60
+        },
+        "optimized": {
+          "backward_ms": 103.06816101074219,
+          "samples": 60
+        }
+      },
+      "backward_speedup": 1.0919648983851924,
+      "backward_gain_percent": 9.19648983851924,
+      "numerical_acceptance": "recorded KDA operator/finite-update checks; full-network gradients diagnostic"
+    },
+    {
+      "case": "b1t8192r2",
+      "family": "KDA",
+      "device": "A800-SXM4-80GB",
+      "group": "a800",
+      "batch": 1,
+      "length": 8192,
+      "heads": 16,
+      "parameters": 1390941568,
+      "scope": "FLA_default",
+      "timing": "CUDA event interval around complete loss.backward inside updating graph",
+      "policy": "R",
+      "variants": {
+        "original": {
+          "backward_ms": 358.5331268310547,
+          "samples": 60
+        },
+        "optimized": {
+          "backward_ms": 325.0206756591797,
+          "samples": 60
+        }
+      },
+      "backward_speedup": 1.1031086748678613,
+      "backward_gain_percent": 10.310867486786135,
+      "numerical_acceptance": "recorded KDA operator/finite-update checks; full-network gradients diagnostic"
+    },
+    {
+      "case": "gdn_base_b1t2048",
+      "family": "GDN",
+      "device": "A800-SXM4-80GB",
+      "group": "a800",
+      "batch": 1,
+      "length": 2048,
+      "heads": 8,
+      "parameters": 1466343808,
+      "scope": "published_config",
+      "timing": "CUDA event interval around complete loss.backward inside updating graph",
+      "policy": "R",
+      "variants": {
+        "original": {
+          "backward_ms": 104.64102172851562,
+          "samples": 60
+        },
+        "optimized": {
+          "backward_ms": 104.85760116577148,
+          "samples": 60
+        }
+      },
+      "backward_speedup": 0.9979345375552368,
+      "backward_gain_percent": -0.20654624447632441,
+      "numerical_acceptance": "performance diagnostics; original numerical thresholds not enforced",
+      "head_dim": 256,
+      "value_dim": 256,
+      "backend": "wide64"
+    },
+    {
+      "case": "gdn_base_b1t8192",
+      "family": "GDN",
+      "device": "A800-SXM4-80GB",
+      "group": "a800",
+      "batch": 1,
+      "length": 8192,
+      "heads": 8,
+      "parameters": 1466343808,
+      "scope": "published_config",
+      "timing": "CUDA event interval around complete loss.backward inside updating graph",
+      "policy": "R",
+      "variants": {
+        "original": {
+          "backward_ms": 334.44044494628906,
+          "samples": 60
+        },
+        "optimized": {
+          "backward_ms": 333.4983673095703,
+          "samples": 60
+        }
+      },
+      "backward_speedup": 1.0028248343292316,
+      "backward_gain_percent": 0.282483432923164,
+      "numerical_acceptance": "performance diagnostics; original numerical thresholds not enforced",
+      "head_dim": 256,
+      "value_dim": 256,
+      "backend": "wide64"
+    },
+    {
+      "case": "delta_base_b1t2048",
+      "family": "DeltaNet",
+      "device": "A800-SXM4-80GB",
+      "group": "a800",
+      "batch": 1,
+      "length": 2048,
+      "heads": 16,
+      "parameters": 1365677056,
+      "scope": "published_config",
+      "timing": "CUDA event interval around complete loss.backward inside updating graph",
+      "policy": "R",
+      "variants": {
+        "original": {
+          "backward_ms": 87.88275146484375,
+          "samples": 60
+        },
+        "optimized": {
+          "backward_ms": 87.05638122558594,
+          "samples": 60
+        }
+      },
+      "backward_speedup": 1.0094923568798073,
+      "backward_gain_percent": 0.9492356879807318,
+      "numerical_acceptance": "performance diagnostics; original numerical thresholds not enforced",
+      "head_dim": 128,
+      "value_dim": 128,
+      "backend": "fixed"
+    },
+    {
+      "case": "delta_base_b1t8192",
+      "family": "DeltaNet",
+      "device": "A800-SXM4-80GB",
+      "group": "a800",
+      "batch": 1,
+      "length": 8192,
+      "heads": 16,
+      "parameters": 1365677056,
+      "scope": "published_config",
+      "timing": "CUDA event interval around complete loss.backward inside updating graph",
+      "policy": "R",
+      "variants": {
+        "original": {
+          "backward_ms": 277.06214904785156,
+          "samples": 60
+        },
+        "optimized": {
+          "backward_ms": 274.46119689941406,
+          "samples": 60
+        }
+      },
+      "backward_speedup": 1.009476575114517,
+      "backward_gain_percent": 0.9476575114516939,
+      "numerical_acceptance": "performance diagnostics; original numerical thresholds not enforced",
+      "head_dim": 128,
+      "value_dim": 128,
+      "backend": "fixed"
+    },
+    {
+      "case": "gdn2_h16k128_b1t2048",
+      "family": "GDN2 port",
+      "device": "A800-SXM4-80GB",
+      "group": "a800",
+      "batch": 1,
+      "length": 2048,
+      "heads": 16,
+      "parameters": 1450096416,
+      "scope": "FLA_layer_port",
+      "timing": "CUDA event interval around complete loss.backward inside updating graph",
+      "policy": "R",
+      "variants": {
+        "original": {
+          "backward_ms": 110.44966506958008,
+          "samples": 60
+        },
+        "optimized": {
+          "backward_ms": 102.34368133544922,
+          "samples": 60
+        }
+      },
+      "backward_speedup": 1.079203558327769,
+      "backward_gain_percent": 7.920355832776904,
+      "numerical_acceptance": "performance diagnostics; original numerical thresholds not enforced",
+      "head_dim": 128,
+      "value_dim": 128,
+      "backend": "fixed"
+    },
+    {
+      "case": "gdn2_officialdim_b1t8192",
+      "family": "GDN2 port",
+      "device": "A800-SXM4-80GB",
+      "group": "a800",
+      "batch": 1,
+      "length": 8192,
+      "heads": 16,
+      "parameters": 1450096416,
+      "scope": "FLA_layer_port",
+      "timing": "CUDA event interval around complete loss.backward inside updating graph",
+      "policy": "R",
+      "variants": {
+        "original": {
+          "backward_ms": 371.7980194091797,
+          "samples": 60
+        },
+        "optimized": {
+          "backward_ms": 342.5111083984375,
+          "samples": 60
+        }
+      },
+      "backward_speedup": 1.0855064559736065,
+      "backward_gain_percent": 8.550645597360651,
+      "numerical_acceptance": "performance diagnostics; original numerical thresholds not enforced",
+      "head_dim": 128,
+      "value_dim": 128,
+      "backend": "fixed"
+    }
+  ],
+  "npu910_rows": [
+    {
+      "case": "formal_kda_combined",
+      "family": "KDA",
+      "device": "Ascend910_9382",
+      "group": "npu910",
+      "batch": 1,
+      "length": 2048,
+      "heads": 16,
+      "parameters": 1390941568,
+      "scope": "FLA_default",
+      "timing": "synchronized eager wall-clock around complete loss.backward",
+      "policy": "R",
+      "variants": {
+        "original": {
+          "backward_ms": 204.35890997759998,
+          "samples": 30
+        },
+        "optimized": {
+          "backward_ms": 187.41436512209475,
+          "samples": 30
+        }
+      },
+      "backward_speedup": 1.090412198896634,
+      "backward_gain_percent": 9.041219889663399,
+      "numerical_acceptance": "performance diagnostics; original numerical thresholds not enforced"
+    },
+    {
+      "case": "gdn_b1t2048",
+      "family": "GDN",
+      "device": "Ascend910_9382",
+      "group": "npu910",
+      "batch": 1,
+      "length": 2048,
+      "heads": 8,
+      "parameters": 1466343808,
+      "scope": "published_config",
+      "timing": "synchronized eager wall-clock around complete loss.backward",
+      "policy": "R",
+      "variants": {
+        "original": {
+          "backward_ms": 175.46940501779318,
+          "samples": 30
+        },
+        "optimized": {
+          "backward_ms": 162.77740010991693,
+          "samples": 30
+        }
+      },
+      "backward_speedup": 1.0779715421139904,
+      "backward_gain_percent": 7.797154211399038,
+      "numerical_acceptance": "performance diagnostics; original numerical thresholds not enforced"
+    },
+    {
+      "case": "delta_b1t2048_r3",
+      "family": "DeltaNet",
+      "device": "Ascend910_9382",
+      "group": "npu910",
+      "batch": 1,
+      "length": 2048,
+      "heads": 16,
+      "parameters": 1365677056,
+      "scope": "published_config",
+      "timing": "synchronized eager wall-clock around complete loss.backward",
+      "policy": "R",
+      "variants": {
+        "original": {
+          "backward_ms": 169.25665503367782,
+          "samples": 30
+        },
+        "optimized": {
+          "backward_ms": 139.72423993982375,
+          "samples": 30
+        }
+      },
+      "backward_speedup": 1.2113621452267198,
+      "backward_gain_percent": 21.13621452267198,
+      "numerical_acceptance": "performance diagnostics; original numerical thresholds not enforced"
+    },
+    {
+      "case": "formal_gdn2_combined",
+      "family": "GDN2 port",
+      "device": "Ascend910_9382",
+      "group": "npu910",
+      "batch": 1,
+      "length": 2048,
+      "heads": 16,
+      "parameters": 1450096416,
+      "scope": "FLA_layer_port",
+      "timing": "synchronized eager wall-clock around complete loss.backward",
+      "policy": "R",
+      "variants": {
+        "original": {
+          "backward_ms": 226.0750699788332,
+          "samples": 30
+        },
+        "optimized": {
+          "backward_ms": 158.90516992658377,
+          "samples": 30
+        }
+      },
+      "backward_speedup": 1.42270430901199,
+      "backward_gain_percent": 42.270430901199,
+      "numerical_acceptance": "performance diagnostics; original numerical thresholds not enforced"
+    }
+  ],
+  "structural_exploration": [
+    {
+      "case": "gdn_h64k128_joint_b4t1024_confirm",
+      "family": "GDN",
+      "device": "A800-SXM4-80GB",
+      "group": "structural_exploration",
+      "batch": 4,
+      "length": 1024,
+      "heads": 64,
+      "parameters": 2983567360,
+      "scope": "structural_exploration",
+      "timing": "CUDA event interval around complete loss.backward inside updating graph",
+      "policy": "R",
+      "variants": {
+        "original": {
+          "backward_ms": 350.3467559814453,
+          "samples": 60
+        },
+        "optimized": {
+          "backward_ms": 340.80409240722656,
+          "samples": 60
+        }
+      },
+      "backward_speedup": 1.028000437162639,
+      "backward_gain_percent": 2.8000437162639003,
+      "numerical_acceptance": "performance diagnostics; original numerical thresholds not enforced",
+      "head_dim": 128,
+      "value_dim": 128,
+      "backend": "liveness"
+    },
+    {
+      "case": "delta_h64k128_b4t1024_confirm",
+      "family": "DeltaNet",
+      "device": "A800-SXM4-80GB",
+      "group": "structural_exploration",
+      "batch": 4,
+      "length": 1024,
+      "heads": 64,
+      "parameters": 2577765376,
+      "scope": "structural_exploration",
+      "timing": "CUDA event interval around complete loss.backward inside updating graph",
+      "policy": "R",
+      "variants": {
+        "original": {
+          "backward_ms": 306.97523498535156,
+          "samples": 60
+        },
+        "optimized": {
+          "backward_ms": 299.80824279785156,
+          "samples": 60
+        }
+      },
+      "backward_speedup": 1.0239052539737288,
+      "backward_gain_percent": 2.390525397372878,
+      "numerical_acceptance": "performance diagnostics; original numerical thresholds not enforced",
+      "head_dim": 128,
+      "value_dim": 128,
+      "backend": "fixed"
+    },
+    {
+      "case": "gdn2_h36k128_b4t2048_confirm",
+      "family": "GDN2 port",
+      "device": "A800-SXM4-80GB",
+      "group": "structural_exploration",
+      "batch": 4,
+      "length": 2048,
+      "heads": 36,
+      "parameters": 2099548296,
+      "scope": "structural_exploration",
+      "timing": "CUDA event interval around complete loss.backward inside updating graph",
+      "policy": "R",
+      "variants": {
+        "original": {
+          "backward_ms": 630.6145324707031,
+          "samples": 60
+        },
+        "optimized": {
+          "backward_ms": 533.5398254394531,
+          "samples": 60
+        }
+      },
+      "backward_speedup": 1.1819446316894786,
+      "backward_gain_percent": 18.194463168947863,
+      "numerical_acceptance": "performance diagnostics; original numerical thresholds not enforced",
+      "head_dim": 128,
+      "value_dim": 128,
+      "backend": "fixed"
+    }
+  ],
+  "no_new_accelerator_experiments": true,
+  "npu950_full_model_status": "not measured; existing 950 evidence is operator-only and is not relabeled",
+  "kda_fixed_architecture_aggregate": {
+    "cases": [
+      {
+        "case": "b1t2048gpu0r2",
+        "family": "KDA",
+        "device": "A800-SXM4-80GB",
+        "group": "a800_aggregate",
+        "batch": 1,
+        "length": 2048,
+        "heads": 16,
+        "parameters": 1390941568,
+        "scope": "FLA_default",
+        "timing": "CUDA event interval around complete loss.backward inside updating graph",
+        "policy": "R",
+        "variants": {
+          "original": {
+            "backward_ms": 112.54681396484375,
+            "samples": 60
+          },
+          "optimized": {
+            "backward_ms": 103.06816101074219,
+            "samples": 60
+          }
+        },
+        "backward_speedup": 1.0919648983851924,
+        "backward_gain_percent": 9.19648983851924,
+        "numerical_acceptance": "recorded KDA operator/finite-update checks; full-network gradients diagnostic"
+      },
+      {
+        "case": "b1t4096r2",
+        "family": "KDA",
+        "device": "A800-SXM4-80GB",
+        "group": "a800_aggregate",
+        "batch": 1,
+        "length": 4096,
+        "heads": 16,
+        "parameters": 1390941568,
+        "scope": "FLA_default",
+        "timing": "CUDA event interval around complete loss.backward inside updating graph",
+        "policy": "R",
+        "variants": {
+          "original": {
+            "backward_ms": 199.3912353515625,
+            "samples": 60
+          },
+          "optimized": {
+            "backward_ms": 182.20441436767578,
+            "samples": 60
+          }
+        },
+        "backward_speedup": 1.0943271382503659,
+        "backward_gain_percent": 9.432713825036586,
+        "numerical_acceptance": "recorded KDA operator/finite-update checks; full-network gradients diagnostic"
+      },
+      {
+        "case": "b2t2048r3",
+        "family": "KDA",
+        "device": "A800-SXM4-80GB",
+        "group": "a800_aggregate",
+        "batch": 2,
+        "length": 2048,
+        "heads": 16,
+        "parameters": 1390941568,
+        "scope": "FLA_default",
+        "timing": "CUDA event interval around complete loss.backward inside updating graph",
+        "policy": "R",
+        "variants": {
+          "original": {
+            "backward_ms": 198.50802612304688,
+            "samples": 60
+          },
+          "optimized": {
+            "backward_ms": 181.3248062133789,
+            "samples": 60
+          }
+        },
+        "backward_speedup": 1.0947648601893287,
+        "backward_gain_percent": 9.476486018932873,
+        "numerical_acceptance": "recorded KDA operator/finite-update checks; full-network gradients diagnostic"
+      },
+      {
+        "case": "b1t8192r2",
+        "family": "KDA",
+        "device": "A800-SXM4-80GB",
+        "group": "a800_aggregate",
+        "batch": 1,
+        "length": 8192,
+        "heads": 16,
+        "parameters": 1390941568,
+        "scope": "FLA_default",
+        "timing": "CUDA event interval around complete loss.backward inside updating graph",
+        "policy": "R",
+        "variants": {
+          "original": {
+            "backward_ms": 358.5331268310547,
+            "samples": 60
+          },
+          "optimized": {
+            "backward_ms": 325.0206756591797,
+            "samples": 60
+          }
+        },
+        "backward_speedup": 1.1031086748678613,
+        "backward_gain_percent": 10.310867486786135,
+        "numerical_acceptance": "recorded KDA operator/finite-update checks; full-network gradients diagnostic"
+      },
+      {
+        "case": "b2t4096r2",
+        "family": "KDA",
+        "device": "A800-SXM4-80GB",
+        "group": "a800_aggregate",
+        "batch": 2,
+        "length": 4096,
+        "heads": 16,
+        "parameters": 1390941568,
+        "scope": "FLA_default",
+        "timing": "CUDA event interval around complete loss.backward inside updating graph",
+        "policy": "R",
+        "variants": {
+          "original": {
+            "backward_ms": 357.1983337402344,
+            "samples": 60
+          },
+          "optimized": {
+            "backward_ms": 323.3551330566406,
+            "samples": 60
+          }
+        },
+        "backward_speedup": 1.1046626362899443,
+        "backward_gain_percent": 10.466263628994433,
+        "numerical_acceptance": "recorded KDA operator/finite-update checks; full-network gradients diagnostic"
+      },
+      {
+        "case": "b4t2048r2",
+        "family": "KDA",
+        "device": "A800-SXM4-80GB",
+        "group": "a800_aggregate",
+        "batch": 4,
+        "length": 2048,
+        "heads": 16,
+        "parameters": 1390941568,
+        "scope": "FLA_default",
+        "timing": "CUDA event interval around complete loss.backward inside updating graph",
+        "policy": "R",
+        "variants": {
+          "original": {
+            "backward_ms": 355.9070739746094,
+            "samples": 60
+          },
+          "optimized": {
+            "backward_ms": 321.94764709472656,
+            "samples": 60
+          }
+        },
+        "backward_speedup": 1.1054812084708012,
+        "backward_gain_percent": 10.548120847080122,
+        "numerical_acceptance": "recorded KDA operator/finite-update checks; full-network gradients diagnostic"
+      },
+      {
+        "case": "b1t16384r2",
+        "family": "KDA",
+        "device": "A800-SXM4-80GB",
+        "group": "a800_aggregate",
+        "batch": 1,
+        "length": 16384,
+        "heads": 16,
+        "parameters": 1390941568,
+        "scope": "FLA_default",
+        "timing": "CUDA event interval around complete loss.backward inside updating graph",
+        "policy": "R",
+        "variants": {
+          "original": {
+            "backward_ms": 690.81396484375,
+            "samples": 60
+          },
+          "optimized": {
+            "backward_ms": 625.1279296875,
+            "samples": 60
+          }
+        },
+        "backward_speedup": 1.1050761484758589,
+        "backward_gain_percent": 10.507614847585888,
+        "numerical_acceptance": "recorded KDA operator/finite-update checks; full-network gradients diagnostic"
+      },
+      {
+        "case": "b4t4096r2",
+        "family": "KDA",
+        "device": "A800-SXM4-80GB",
+        "group": "a800_aggregate",
+        "batch": 4,
+        "length": 4096,
+        "heads": 16,
+        "parameters": 1390941568,
+        "scope": "FLA_default",
+        "timing": "CUDA event interval around complete loss.backward inside updating graph",
+        "policy": "R",
+        "variants": {
+          "original": {
+            "backward_ms": 683.6495361328125,
+            "samples": 60
+          },
+          "optimized": {
+            "backward_ms": 619.3894348144531,
+            "samples": 60
+          }
+        },
+        "backward_speedup": 1.103747493428927,
+        "backward_gain_percent": 10.37474934289271,
+        "numerical_acceptance": "recorded KDA operator/finite-update checks; full-network gradients diagnostic"
+      }
+    ],
+    "backward_geomean": 1.1003788773922654
+  }
+}

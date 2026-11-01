@@ -1,0 +1,4 @@
+# CPU replay environment used for the 2026-11-01 update.
+# Earlier retained PNGs used other renderer versions; numerical replay is exact.
+numpy==1.26.4
+matplotlib==3.10.9

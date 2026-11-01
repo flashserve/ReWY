@@ -1,0 +1,404 @@
+{
+  "device": "Ascend950DT_9582",
+  "source_revision": "v8",
+  "shapes": 6,
+  "rounds": 30,
+  "raw_timing_samples": 20160,
+  "timing": "public autograd synchronized eager B/FB; allocation/conversion included",
+  "long_acceptance_rows": 240,
+  "exact_repeat_rows": 120,
+  "rows": [
+    {
+      "variant": "combined",
+      "op": "delta",
+      "policy": "recompute",
+      "boundary": "B",
+      "geometric_mean": 1.0877906190481403,
+      "paired_round_bootstrap_95": [
+        1.0863317072514123,
+        1.0886261585040595
+      ],
+      "cases": 6,
+      "min_case": 0.8745305053183096,
+      "max_case": 1.440595056223395
+    },
+    {
+      "variant": "combined",
+      "op": "delta",
+      "policy": "recompute",
+      "boundary": "FB",
+      "geometric_mean": 1.069308580645566,
+      "paired_round_bootstrap_95": [
+        1.0648003643146307,
+        1.0705980492695801
+      ],
+      "cases": 6,
+      "min_case": 0.8990902275296702,
+      "max_case": 1.2344930942750296
+    },
+    {
+      "variant": "combined",
+      "op": "gdn",
+      "policy": "recompute",
+      "boundary": "B",
+      "geometric_mean": 1.2192361404424878,
+      "paired_round_bootstrap_95": [
+        1.21741673333287,
+        1.220786880943484
+      ],
+      "cases": 6,
+      "min_case": 1.0825159817517171,
+      "max_case": 1.2696275801708141
+    },
+    {
+      "variant": "combined",
+      "op": "gdn",
+      "policy": "recompute",
+      "boundary": "FB",
+      "geometric_mean": 1.109831945853917,
+      "paired_round_bootstrap_95": [
+        1.1085209226990878,
+        1.1109976446624799
+      ],
+      "cases": 6,
+      "min_case": 1.059399752444858,
+      "max_case": 1.1319541449661232
+    },
+    {
+      "variant": "combined",
+      "op": "gdn2",
+      "policy": "all",
+      "boundary": "B",
+      "geometric_mean": 2.894511372828054,
+      "paired_round_bootstrap_95": [
+        2.887856700906051,
+        2.8982495718419954
+      ],
+      "cases": 6,
+      "min_case": 1.5274138607991554,
+      "max_case": 4.363656737552372
+    },
+    {
+      "variant": "combined",
+      "op": "gdn2",
+      "policy": "all",
+      "boundary": "FB",
+      "geometric_mean": 1.7259872194306423,
+      "paired_round_bootstrap_95": [
+        1.7233230645593771,
+        1.7291307294836686
+      ],
+      "cases": 6,
+      "min_case": 1.1808202173037454,
+      "max_case": 2.261797472152032
+    },
+    {
+      "variant": "combined",
+      "op": "gdn2",
+      "policy": "recompute",
+      "boundary": "B",
+      "geometric_mean": 2.4301328503221975,
+      "paired_round_bootstrap_95": [
+        2.4243976197288974,
+        2.431765847963015
+      ],
+      "cases": 6,
+      "min_case": 1.3708943249425363,
+      "max_case": 3.6284790116411463
+    },
+    {
+      "variant": "combined",
+      "op": "gdn2",
+      "policy": "recompute",
+      "boundary": "FB",
+      "geometric_mean": 1.6432402903912413,
+      "paired_round_bootstrap_95": [
+        1.6410012405396577,
+        1.6444994964373414
+      ],
+      "cases": 6,
+      "min_case": 1.1428507896383804,
+      "max_case": 2.11684584360669
+    },
+    {
+      "variant": "combined",
+      "op": "kda",
+      "policy": "all",
+      "boundary": "B",
+      "geometric_mean": 1.303111062050423,
+      "paired_round_bootstrap_95": [
+        1.3016832294876315,
+        1.305345224673255
+      ],
+      "cases": 6,
+      "min_case": 1.0955978622129618,
+      "max_case": 1.6132211264158836
+    },
+    {
+      "variant": "combined",
+      "op": "kda",
+      "policy": "all",
+      "boundary": "FB",
+      "geometric_mean": 1.117064010691626,
+      "paired_round_bootstrap_95": [
+        1.1162911047419437,
+        1.1180095703921935
+      ],
+      "cases": 6,
+      "min_case": 1.0139918292025623,
+      "max_case": 1.2407354826570567
+    },
+    {
+      "variant": "combined",
+      "op": "kda",
+      "policy": "recompute",
+      "boundary": "B",
+      "geometric_mean": 1.217684478791312,
+      "paired_round_bootstrap_95": [
+        1.215551038168323,
+        1.2197688995568894
+      ],
+      "cases": 6,
+      "min_case": 1.0598141659213896,
+      "max_case": 1.4644605500283294
+    },
+    {
+      "variant": "combined",
+      "op": "kda",
+      "policy": "recompute",
+      "boundary": "FB",
+      "geometric_mean": 1.1056693394975197,
+      "paired_round_bootstrap_95": [
+        1.1048040022309846,
+        1.1077932194510591
+      ],
+      "cases": 6,
+      "min_case": 1.0129113365618914,
+      "max_case": 1.2168836357967374
+    },
+    {
+      "variant": "residual",
+      "op": "gdn2",
+      "policy": "all",
+      "boundary": "B",
+      "geometric_mean": 1.1873636795050546,
+      "paired_round_bootstrap_95": [
+        1.1863586770704868,
+        1.1883913179342065
+      ],
+      "cases": 6,
+      "min_case": 1.0989653682531741,
+      "max_case": 1.3845485672187425
+    },
+    {
+      "variant": "residual",
+      "op": "gdn2",
+      "policy": "all",
+      "boundary": "FB",
+      "geometric_mean": 1.0915223402746803,
+      "paired_round_bootstrap_95": [
+        1.0903316339733715,
+        1.0926581005634846
+      ],
+      "cases": 6,
+      "min_case": 1.05055168590448,
+      "max_case": 1.1438369637781725
+    },
+    {
+      "variant": "residual",
+      "op": "gdn2",
+      "policy": "recompute",
+      "boundary": "B",
+      "geometric_mean": 1.1630703410382943,
+      "paired_round_bootstrap_95": [
+        1.1610511141571749,
+        1.1646672853406488
+      ],
+      "cases": 6,
+      "min_case": 1.0726116191509043,
+      "max_case": 1.3319650399388014
+    },
+    {
+      "variant": "residual",
+      "op": "gdn2",
+      "policy": "recompute",
+      "boundary": "FB",
+      "geometric_mean": 1.0849438906775848,
+      "paired_round_bootstrap_95": [
+        1.084040073580553,
+        1.0857268300500431
+      ],
+      "cases": 6,
+      "min_case": 1.0447531008267237,
+      "max_case": 1.1320231063312787
+    },
+    {
+      "variant": "residual",
+      "op": "kda",
+      "policy": "all",
+      "boundary": "B",
+      "geometric_mean": 1.0662806335964192,
+      "paired_round_bootstrap_95": [
+        1.0645696143891905,
+        1.0684598297289676
+      ],
+      "cases": 6,
+      "min_case": 1.0226946244844142,
+      "max_case": 1.1231265223335658
+    },
+    {
+      "variant": "residual",
+      "op": "kda",
+      "policy": "all",
+      "boundary": "FB",
+      "geometric_mean": 1.0190031547672163,
+      "paired_round_bootstrap_95": [
+        1.0156246477952555,
+        1.0202362469117034
+      ],
+      "cases": 6,
+      "min_case": 1.0090538536249025,
+      "max_case": 1.0305686914146945
+    },
+    {
+      "variant": "residual",
+      "op": "kda",
+      "policy": "recompute",
+      "boundary": "B",
+      "geometric_mean": 1.0501007527642785,
+      "paired_round_bootstrap_95": [
+        1.048430111143373,
+        1.0530953035632524
+      ],
+      "cases": 6,
+      "min_case": 1.0202976592306006,
+      "max_case": 1.0829549059899584
+    },
+    {
+      "variant": "residual",
+      "op": "kda",
+      "policy": "recompute",
+      "boundary": "FB",
+      "geometric_mean": 1.015775792627943,
+      "paired_round_bootstrap_95": [
+        1.0146864573478682,
+        1.0169696894714997
+      ],
+      "cases": 6,
+      "min_case": 1.0085789227487212,
+      "max_case": 1.024168534390278
+    },
+    {
+      "variant": "matrix",
+      "op": "gdn2",
+      "policy": "all",
+      "boundary": "B",
+      "geometric_mean": 2.039609676114688,
+      "paired_round_bootstrap_95": [
+        2.0325564072495923,
+        2.0440435839948576
+      ],
+      "cases": 6,
+      "min_case": 1.0389097971648702,
+      "max_case": 3.0425915381914894
+    },
+    {
+      "variant": "matrix",
+      "op": "gdn2",
+      "policy": "all",
+      "boundary": "FB",
+      "geometric_mean": 1.481991334172756,
+      "paired_round_bootstrap_95": [
+        1.4803191252864176,
+        1.48353095481955
+      ],
+      "cases": 6,
+      "min_case": 0.999056095117862,
+      "max_case": 1.9449206940389274
+    },
+    {
+      "variant": "matrix",
+      "op": "gdn2",
+      "policy": "recompute",
+      "boundary": "B",
+      "geometric_mean": 1.8385337716816361,
+      "paired_round_bootstrap_95": [
+        1.8365792064695012,
+        1.8409304503606407
+      ],
+      "cases": 6,
+      "min_case": 1.031857719117411,
+      "max_case": 2.6782362578527232
+    },
+    {
+      "variant": "matrix",
+      "op": "gdn2",
+      "policy": "recompute",
+      "boundary": "FB",
+      "geometric_mean": 1.43850116545668,
+      "paired_round_bootstrap_95": [
+        1.4374485253555633,
+        1.439614064229659
+      ],
+      "cases": 6,
+      "min_case": 0.9977652677661474,
+      "max_case": 1.8592359925864792
+    },
+    {
+      "variant": "matrix",
+      "op": "kda",
+      "policy": "all",
+      "boundary": "B",
+      "geometric_mean": 1.1835607278740345,
+      "paired_round_bootstrap_95": [
+        1.1818993804343125,
+        1.1858062652376617
+      ],
+      "cases": 6,
+      "min_case": 0.9589894531657907,
+      "max_case": 1.5267320142809473
+    },
+    {
+      "variant": "matrix",
+      "op": "kda",
+      "policy": "all",
+      "boundary": "FB",
+      "geometric_mean": 1.0723622956918837,
+      "paired_round_bootstrap_95": [
+        1.0708149827938396,
+        1.0739670664915255
+      ],
+      "cases": 6,
+      "min_case": 0.9538393208265302,
+      "max_case": 1.2154962852751978
+    },
+    {
+      "variant": "matrix",
+      "op": "kda",
+      "policy": "recompute",
+      "boundary": "B",
+      "geometric_mean": 1.1417169371736284,
+      "paired_round_bootstrap_95": [
+        1.1391194818997263,
+        1.1444191264818508
+      ],
+      "cases": 6,
+      "min_case": 0.969660634126363,
+      "max_case": 1.401165094797702
+    },
+    {
+      "variant": "matrix",
+      "op": "kda",
+      "policy": "recompute",
+      "boundary": "FB",
+      "geometric_mean": 1.06521402165745,
+      "paired_round_bootstrap_95": [
+        1.0642144110839844,
+        1.0660865178896834
+      ],
+      "cases": 6,
+      "min_case": 0.9600396400519184,
+      "max_case": 1.1939575158367455
+    }
+  ]
+}

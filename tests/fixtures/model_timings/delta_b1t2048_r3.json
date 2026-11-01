@@ -1,0 +1,422 @@
+[
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "boundary": "B",
+    "ms": 169.28259981796145
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "boundary": "B",
+    "ms": 169.21162977814674
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "boundary": "B",
+    "ms": 169.03068963438272
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "boundary": "B",
+    "ms": 169.5333202369511
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "boundary": "B",
+    "ms": 168.75704983249307
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "boundary": "B",
+    "ms": 168.6752298846841
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "boundary": "B",
+    "ms": 169.33920001611114
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "boundary": "B",
+    "ms": 169.16290996596217
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "boundary": "B",
+    "ms": 169.23071024939418
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "boundary": "B",
+    "ms": 168.98131975904107
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "boundary": "B",
+    "ms": 169.3046703003347
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "boundary": "B",
+    "ms": 169.35109021142125
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "boundary": "B",
+    "ms": 168.45070011913776
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "boundary": "B",
+    "ms": 168.82631974294782
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 0,
+    "boundary": "B",
+    "ms": 169.22011971473694
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "boundary": "B",
+    "ms": 139.90745972841978
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "boundary": "B",
+    "ms": 139.5306997001171
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "boundary": "B",
+    "ms": 139.4329802133143
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "boundary": "B",
+    "ms": 139.9861196987331
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "boundary": "B",
+    "ms": 139.55156970769167
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "boundary": "B",
+    "ms": 139.37817001715302
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "boundary": "B",
+    "ms": 140.09822998195887
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "boundary": "B",
+    "ms": 139.60533030331135
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "boundary": "B",
+    "ms": 139.22121981158853
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "boundary": "B",
+    "ms": 139.464579988271
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "boundary": "B",
+    "ms": 139.83685988932848
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "boundary": "B",
+    "ms": 139.9290100671351
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "boundary": "B",
+    "ms": 139.72991984337568
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "boundary": "B",
+    "ms": 139.54860996454954
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 1,
+    "boundary": "B",
+    "ms": 139.77415021508932
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "boundary": "B",
+    "ms": 140.19911969080567
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "boundary": "B",
+    "ms": 139.84962971881032
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "boundary": "B",
+    "ms": 139.63935989886522
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "boundary": "B",
+    "ms": 139.7185600362718
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "boundary": "B",
+    "ms": 139.53395001590252
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "boundary": "B",
+    "ms": 139.53809021040797
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "boundary": "B",
+    "ms": 139.84075002372265
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "boundary": "B",
+    "ms": 139.62261006236076
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "boundary": "B",
+    "ms": 142.22788019105792
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "boundary": "B",
+    "ms": 139.4805097952485
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "boundary": "B",
+    "ms": 139.77343030273914
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "boundary": "B",
+    "ms": 139.9879101663828
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "boundary": "B",
+    "ms": 139.7389299236238
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "boundary": "B",
+    "ms": 139.54400969669223
+  },
+  {
+    "type": "sample",
+    "variant": "optimized",
+    "block": 2,
+    "boundary": "B",
+    "ms": 140.07839979603887
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "boundary": "B",
+    "ms": 170.361059717834
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "boundary": "B",
+    "ms": 169.40298024564981
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "boundary": "B",
+    "ms": 169.32620014995337
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "boundary": "B",
+    "ms": 169.17053004726768
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "boundary": "B",
+    "ms": 169.557920191437
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "boundary": "B",
+    "ms": 171.22816992923617
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "boundary": "B",
+    "ms": 169.20521995052695
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "boundary": "B",
+    "ms": 169.73468009382486
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "boundary": "B",
+    "ms": 168.66541001945734
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "boundary": "B",
+    "ms": 168.92055980861187
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "boundary": "B",
+    "ms": 169.2920201458037
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "boundary": "B",
+    "ms": 171.0842400789261
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "boundary": "B",
+    "ms": 169.3457500077784
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "boundary": "B",
+    "ms": 168.91932021826506
+  },
+  {
+    "type": "sample",
+    "variant": "original",
+    "block": 3,
+    "boundary": "B",
+    "ms": 169.4828299805522
+  }
+]

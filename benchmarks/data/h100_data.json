@@ -1,0 +1,2390 @@
+{
+  "revision": "2026-11-01",
+  "measurement_date": "2026-10-31 UTC",
+  "release": "statefix1",
+  "device": "NVIDIA H100 80GB HBM3",
+  "display_device": "H100",
+  "capability": [
+    9,
+    0
+  ],
+  "torch": "2.12.1+cu126",
+  "triton": "3.7.1",
+  "cuda": "12.6",
+  "baseline_commit": "a59bc5df8c5841dce2169bb00e4027287197ba77",
+  "operator_boundary": "complete low-level B including recomputation; excluding final public-wrapper gradient conversion",
+  "model_boundary": "complete model B only, CUDA events around loss.backward() within continuous updating Graph",
+  "model_save_policy": "native R; no layer checkpoint",
+  "model_display_metric": "100 * (original_B / optimized_B - 1), percent; transform geometric mean for groups",
+  "performance_scope": {
+    "scope": "performance-only",
+    "skipped_stages": [
+      "focused-gdn",
+      "focused-delta",
+      "doctor",
+      "single-smoke"
+    ],
+    "required_stages": [
+      "single-formal",
+      "full"
+    ],
+    "hopper_sanitizer_acceptance": false,
+    "embedded_experiment_checks_retained": true
+  },
+  "operator_results": [
+    {
+      "op": "kda",
+      "policy": "recompute",
+      "boundary": "B",
+      "scheme": "residual WY + FP32 endpoint matrix intra; separate schedule",
+      "geometric_mean": 1.3263856427776957,
+      "cases": [
+        {
+          "case_id": 0,
+          "original_us": 89.31217295058231,
+          "optimized_us": 64.34246834288251,
+          "speedup": 1.3880750187362358
+        },
+        {
+          "case_id": 1,
+          "original_us": 252.97086630294572,
+          "optimized_us": 187.75152092549337,
+          "speedup": 1.3473705302410508
+        },
+        {
+          "case_id": 2,
+          "original_us": 917.2293345133464,
+          "optimized_us": 742.5595654381646,
+          "speedup": 1.2352266096957676
+        },
+        {
+          "case_id": 3,
+          "original_us": 603.7342888968332,
+          "optimized_us": 459.19171401432584,
+          "speedup": 1.3147760956287593
+        },
+        {
+          "case_id": 4,
+          "original_us": 1091.5621439615886,
+          "optimized_us": 807.3674519856771,
+          "speedup": 1.352001670710096
+        },
+        {
+          "case_id": 5,
+          "original_us": 2316.3976669311523,
+          "optimized_us": 1746.9074385506765,
+          "speedup": 1.3259990860494326
+        }
+      ]
+    },
+    {
+      "op": "kda",
+      "policy": "all",
+      "boundary": "B",
+      "scheme": "residual WY + FP32 endpoint matrix intra; separate schedule",
+      "geometric_mean": 1.4212693505450749,
+      "cases": [
+        {
+          "case_id": 0,
+          "original_us": 70.7740744765924,
+          "optimized_us": 46.04078409623126,
+          "speedup": 1.5372039348562208
+        },
+        {
+          "case_id": 1,
+          "original_us": 196.04880015055338,
+          "optimized_us": 132.60942565070258,
+          "speedup": 1.4783926496066133
+        },
+        {
+          "case_id": 2,
+          "original_us": 696.1366732915242,
+          "optimized_us": 524.9636769294739,
+          "speedup": 1.3260663620828885
+        },
+        {
+          "case_id": 3,
+          "original_us": 520.2906637480764,
+          "optimized_us": 375.51684813065964,
+          "speedup": 1.3855321441317683
+        },
+        {
+          "case_id": 4,
+          "original_us": 969.9181980556912,
+          "optimized_us": 685.0506729549832,
+          "speedup": 1.4158342387606524
+        },
+        {
+          "case_id": 5,
+          "original_us": 1994.674026966095,
+          "optimized_us": 1430.6359887123108,
+          "speedup": 1.3942568498933572
+        }
+      ]
+    },
+    {
+      "op": "gdn",
+      "policy": "recompute",
+      "boundary": "B",
+      "scheme": "residual unified adjoint + Gram elimination; liveness joint consumer",
+      "geometric_mean": 1.2055806353055223,
+      "cases": [
+        {
+          "case_id": 0,
+          "original_us": 67.75170318351304,
+          "optimized_us": 54.6606611614385,
+          "speedup": 1.2394965912214375
+        },
+        {
+          "case_id": 1,
+          "original_us": 154.92087543600857,
+          "optimized_us": 139.38764062258275,
+          "speedup": 1.1114391114165199
+        },
+        {
+          "case_id": 2,
+          "original_us": 576.7940768489132,
+          "optimized_us": 525.3212010418927,
+          "speedup": 1.0979836254560678
+        },
+        {
+          "case_id": 3,
+          "original_us": 250.36473707719284,
+          "optimized_us": 200.0552668715968,
+          "speedup": 1.2514778590552509
+        },
+        {
+          "case_id": 4,
+          "original_us": 383.46199555830526,
+          "optimized_us": 291.098182851618,
+          "speedup": 1.3172943637156542
+        },
+        {
+          "case_id": 5,
+          "original_us": 927.9576469870174,
+          "optimized_us": 753.6738620084875,
+          "speedup": 1.2312456272718226
+        }
+      ]
+    },
+    {
+      "op": "gdn",
+      "policy": "all",
+      "boundary": "B",
+      "scheme": "residual unified adjoint + Gram elimination; liveness joint consumer",
+      "geometric_mean": 1.2829171314203844,
+      "cases": [
+        {
+          "case_id": 0,
+          "original_us": 52.5923488296081,
+          "optimized_us": 39.419887221862226,
+          "speedup": 1.334157770000936
+        },
+        {
+          "case_id": 1,
+          "original_us": 111.7168106399216,
+          "optimized_us": 95.08425039011281,
+          "speedup": 1.1749244504906808
+        },
+        {
+          "case_id": 2,
+          "original_us": 408.05410083971526,
+          "optimized_us": 358.2471671857332,
+          "speedup": 1.139029525467705
+        },
+        {
+          "case_id": 3,
+          "original_us": 197.47069824573606,
+          "optimized_us": 146.16390716197878,
+          "speedup": 1.3510223014693985
+        },
+        {
+          "case_id": 4,
+          "original_us": 315.9567919644443,
+          "optimized_us": 223.9130193536932,
+          "speedup": 1.4110693200262674
+        },
+        {
+          "case_id": 5,
+          "original_us": 730.9551239013672,
+          "optimized_us": 558.0358090608016,
+          "speedup": 1.3098713595666849
+        }
+      ]
+    },
+    {
+      "op": "gdn2",
+      "policy": "recompute",
+      "boundary": "B",
+      "scheme": "residual WY + FP32 joint matrix intra + full-K BV16 state",
+      "geometric_mean": 1.5680174645568126,
+      "cases": [
+        {
+          "case_id": 0,
+          "original_us": 99.90735293766639,
+          "optimized_us": 63.515977486551805,
+          "speedup": 1.5729483649813891
+        },
+        {
+          "case_id": 1,
+          "original_us": 287.82189478639697,
+          "optimized_us": 199.98176762315092,
+          "speedup": 1.4392406778240578
+        },
+        {
+          "case_id": 2,
+          "original_us": 1030.4421424865723,
+          "optimized_us": 845.139217376709,
+          "speedup": 1.2192572789191336
+        },
+        {
+          "case_id": 3,
+          "original_us": 741.1830139160156,
+          "optimized_us": 439.10207748413086,
+          "speedup": 1.6879515081383372
+        },
+        {
+          "case_id": 4,
+          "original_us": 1372.9982376098633,
+          "optimized_us": 740.6748703547887,
+          "speedup": 1.8537124621930092
+        },
+        {
+          "case_id": 5,
+          "original_us": 2876.231988271077,
+          "optimized_us": 1671.337366104126,
+          "speedup": 1.7209164628297344
+        }
+      ]
+    },
+    {
+      "op": "gdn2",
+      "policy": "all",
+      "boundary": "B",
+      "scheme": "residual WY + FP32 joint matrix intra + full-K BV16 state",
+      "geometric_mean": 1.7032820944175162,
+      "cases": [
+        {
+          "case_id": 0,
+          "original_us": 82.12128109402127,
+          "optimized_us": 44.067696465386284,
+          "speedup": 1.863525613564231
+        },
+        {
+          "case_id": 1,
+          "original_us": 227.35904392443206,
+          "optimized_us": 162.11189721759996,
+          "speedup": 1.4024821609437585
+        },
+        {
+          "case_id": 2,
+          "original_us": 807.3335647583008,
+          "optimized_us": 622.7767944335938,
+          "speedup": 1.2963449697777494
+        },
+        {
+          "case_id": 3,
+          "original_us": 649.2292469945447,
+          "optimized_us": 350.2355772873451,
+          "speedup": 1.8536930257713227
+        },
+        {
+          "case_id": 4,
+          "original_us": 1240.222990512848,
+          "optimized_us": 608.2389950752258,
+          "speedup": 2.039038931332345
+        },
+        {
+          "case_id": 5,
+          "original_us": 2539.9988719395233,
+          "optimized_us": 1332.0811135428294,
+          "speedup": 1.9067899440328313
+        }
+      ]
+    },
+    {
+      "op": "delta",
+      "policy": "recompute",
+      "boundary": "B",
+      "scheme": "residual unified adjoint + SM80-lowered K64 BV16 s3 state + s2 consumer",
+      "geometric_mean": 1.2065847137659769,
+      "cases": [
+        {
+          "case_id": 0,
+          "original_us": 51.83970034122467,
+          "optimized_us": 40.64072370529175,
+          "speedup": 1.2755604628781432
+        },
+        {
+          "case_id": 1,
+          "original_us": 114.58883354132124,
+          "optimized_us": 97.8601441966544,
+          "speedup": 1.1709448671059566
+        },
+        {
+          "case_id": 2,
+          "original_us": 427.3202225968645,
+          "optimized_us": 366.01210929252005,
+          "speedup": 1.1675029643769148
+        },
+        {
+          "case_id": 3,
+          "original_us": 188.01856863087622,
+          "optimized_us": 153.82896620651772,
+          "speedup": 1.2222572462617896
+        },
+        {
+          "case_id": 4,
+          "original_us": 307.0055429752056,
+          "optimized_us": 260.7221511694101,
+          "speedup": 1.177519982856086
+        },
+        {
+          "case_id": 5,
+          "original_us": 719.8996327140114,
+          "optimized_us": 585.5330770665948,
+          "speedup": 1.2294773103520753
+        }
+      ]
+    },
+    {
+      "op": "delta",
+      "policy": "all",
+      "boundary": "B",
+      "scheme": "residual unified adjoint + SM80-lowered K64 BV16 s3 state + s2 consumer",
+      "geometric_mean": 1.3045609872457153,
+      "cases": [
+        {
+          "case_id": 0,
+          "original_us": 38.52254713597319,
+          "optimized_us": 27.415461604370666,
+          "speedup": 1.4051394680814637
+        },
+        {
+          "case_id": 1,
+          "original_us": 77.08711094326443,
+          "optimized_us": 59.795962439643006,
+          "speedup": 1.2891691645748626
+        },
+        {
+          "case_id": 2,
+          "original_us": 278.8059590226513,
+          "optimized_us": 218.55606467036876,
+          "speedup": 1.2756724890849074
+        },
+        {
+          "case_id": 3,
+          "original_us": 137.93541173465917,
+          "optimized_us": 105.4053111154525,
+          "speedup": 1.3086191793843842
+        },
+        {
+          "case_id": 4,
+          "original_us": 240.7885859994327,
+          "optimized_us": 196.01929187774658,
+          "speedup": 1.228392285743017
+        },
+        {
+          "case_id": 5,
+          "original_us": 536.346835474814,
+          "optimized_us": 404.18323393790956,
+          "speedup": 1.3269893217718363
+        }
+      ]
+    }
+  ],
+  "model_results": [
+    {
+      "case": "delta_base_b1t2048",
+      "family": "delta",
+      "scope": "published_config",
+      "backend": "fixed",
+      "workload": "standard",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 1,
+      "length": 2048,
+      "heads": 16,
+      "head_dim": 128,
+      "value_dim": 128,
+      "hidden_size": 2048,
+      "layers": 24,
+      "parameters": 1365677056,
+      "validation": "full",
+      "trajectory_diagnostic_passed": false,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 1.0180987388240734,
+      "numerical_acceptance": "diagnostic_only_not_enforced",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 34.769392013549805
+        },
+        "optimized": {
+          "backward_ms": 34.151296615600586
+        }
+      },
+      "backward_gain_percent": 1.8098738824073424
+    },
+    {
+      "case": "gdn_base_b1t2048",
+      "family": "gdn",
+      "scope": "published_config",
+      "backend": "wide64",
+      "workload": "standard",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 1,
+      "length": 2048,
+      "heads": 8,
+      "head_dim": 256,
+      "value_dim": 256,
+      "hidden_size": 2048,
+      "layers": 24,
+      "parameters": 1466343808,
+      "validation": "full",
+      "trajectory_diagnostic_passed": true,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 1.0427852965459778,
+      "numerical_acceptance": "diagnostic_only_not_enforced",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 44.55219268798828
+        },
+        "optimized": {
+          "backward_ms": 42.72422409057617
+        }
+      },
+      "backward_gain_percent": 4.278529654597785
+    },
+    {
+      "case": "delta_h32k64_b1t2048",
+      "family": "delta",
+      "scope": "structural_exploration",
+      "backend": "fixed",
+      "workload": "standard",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 1,
+      "length": 2048,
+      "heads": 32,
+      "head_dim": 64,
+      "value_dim": 64,
+      "hidden_size": 2048,
+      "layers": 24,
+      "parameters": 1366461952,
+      "validation": "full",
+      "trajectory_diagnostic_passed": false,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 1.0304610365992486,
+      "numerical_acceptance": "diagnostic_only_not_enforced",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 35.194976806640625
+        },
+        "optimized": {
+          "backward_ms": 34.154592514038086
+        }
+      },
+      "backward_gain_percent": 3.046103659924859
+    },
+    {
+      "case": "gdn2_base_b1t2048_r4",
+      "family": "gdn2",
+      "scope": "structural_exploration",
+      "backend": "fixed",
+      "workload": "standard",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 1,
+      "length": 2048,
+      "heads": 18,
+      "head_dim": 128,
+      "value_dim": 128,
+      "hidden_size": 2304,
+      "layers": 18,
+      "parameters": 1515041604,
+      "validation": "full",
+      "trajectory_diagnostic_passed": true,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 1.079685392358762,
+      "numerical_acceptance": "diagnostic_only_not_enforced",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 50.718143463134766
+        },
+        "optimized": {
+          "backward_ms": 46.97492790222168
+        }
+      },
+      "backward_gain_percent": 7.968539235876193
+    },
+    {
+      "case": "gdn_h16k128_b1t2048",
+      "family": "gdn",
+      "scope": "structural_exploration",
+      "backend": "wide64",
+      "workload": "standard",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 1,
+      "length": 2048,
+      "heads": 16,
+      "head_dim": 128,
+      "value_dim": 128,
+      "hidden_size": 2048,
+      "layers": 24,
+      "parameters": 1467127552,
+      "validation": "full",
+      "trajectory_diagnostic_passed": true,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 1.0168649078453267,
+      "numerical_acceptance": "diagnostic_only_not_enforced",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 40.14952087402344
+        },
+        "optimized": {
+          "backward_ms": 39.483633041381836
+        }
+      },
+      "backward_gain_percent": 1.6864907845326682
+    },
+    {
+      "case": "delta_h8k256_b1t2048",
+      "family": "delta",
+      "scope": "structural_exploration",
+      "backend": "fixed",
+      "workload": "standard",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 1,
+      "length": 2048,
+      "heads": 8,
+      "head_dim": 256,
+      "value_dim": 256,
+      "hidden_size": 2048,
+      "layers": 24,
+      "parameters": 1365286912,
+      "validation": "full",
+      "trajectory_diagnostic_passed": true,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 0.9889188657358171,
+      "numerical_acceptance": "diagnostic_only_not_enforced",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 37.91070365905762
+        },
+        "optimized": {
+          "backward_ms": 38.33550453186035
+        }
+      },
+      "backward_gain_percent": -1.108113426418289
+    },
+    {
+      "case": "gdn2_h36k64_b1t2048",
+      "family": "gdn2",
+      "scope": "structural_exploration",
+      "backend": "fixed",
+      "workload": "standard",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 1,
+      "length": 2048,
+      "heads": 36,
+      "head_dim": 64,
+      "value_dim": 64,
+      "hidden_size": 2304,
+      "layers": 18,
+      "parameters": 1504423944,
+      "validation": "full",
+      "trajectory_diagnostic_passed": true,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 1.0453027242725381,
+      "numerical_acceptance": "diagnostic_only_not_enforced",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 48.320783615112305
+        },
+        "optimized": {
+          "backward_ms": 46.226593017578125
+        }
+      },
+      "backward_gain_percent": 4.530272427253812
+    },
+    {
+      "case": "gdn_h32k64_b1t2048",
+      "family": "gdn",
+      "scope": "structural_exploration",
+      "backend": "wide64",
+      "workload": "standard",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 1,
+      "length": 2048,
+      "heads": 32,
+      "head_dim": 64,
+      "value_dim": 64,
+      "hidden_size": 2048,
+      "layers": 24,
+      "parameters": 1468699648,
+      "validation": "full",
+      "trajectory_diagnostic_passed": true,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 0.9841980698031914,
+      "numerical_acceptance": "diagnostic_only_not_enforced",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 38.8427848815918
+        },
+        "optimized": {
+          "backward_ms": 39.4664306640625
+        }
+      },
+      "backward_gain_percent": -1.5801930196808645
+    },
+    {
+      "case": "delta_h32k128_b1t2048",
+      "family": "delta",
+      "scope": "structural_exploration",
+      "backend": "fixed",
+      "workload": "standard",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 1,
+      "length": 2048,
+      "heads": 32,
+      "head_dim": 128,
+      "value_dim": 128,
+      "hidden_size": 2048,
+      "layers": 24,
+      "parameters": 1769706496,
+      "validation": "full",
+      "trajectory_diagnostic_passed": false,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 1.0262376830368003,
+      "numerical_acceptance": "diagnostic_only_not_enforced",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 46.395057678222656
+        },
+        "optimized": {
+          "backward_ms": 45.20888137817383
+        }
+      },
+      "backward_gain_percent": 2.6237683036800297
+    },
+    {
+      "case": "gdn2_h16k128_b1t2048",
+      "family": "gdn2",
+      "scope": "official_dimensions_FLA_port",
+      "backend": "fixed",
+      "workload": "standard",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 1,
+      "length": 2048,
+      "heads": 16,
+      "head_dim": 128,
+      "value_dim": 128,
+      "hidden_size": 2304,
+      "layers": 18,
+      "parameters": 1450096416,
+      "validation": "full",
+      "trajectory_diagnostic_passed": true,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 1.0603659207920475,
+      "numerical_acceptance": "diagnostic_only_not_enforced",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 46.71420860290527
+        },
+        "optimized": {
+          "backward_ms": 44.054800033569336
+        }
+      },
+      "backward_gain_percent": 6.03659207920475
+    },
+    {
+      "case": "gdn2_h18k256_b1t2048",
+      "family": "gdn2",
+      "scope": "structural_exploration",
+      "backend": "fixed",
+      "workload": "standard",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 1,
+      "length": 2048,
+      "heads": 18,
+      "head_dim": 256,
+      "value_dim": 256,
+      "hidden_size": 2304,
+      "layers": 18,
+      "parameters": 2131400772,
+      "validation": "full",
+      "trajectory_diagnostic_passed": true,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 1.0969291761929467,
+      "numerical_acceptance": "diagnostic_only_not_enforced",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 80.9105110168457
+        },
+        "optimized": {
+          "backward_ms": 73.76092529296875
+        }
+      },
+      "backward_gain_percent": 9.692917619294672
+    },
+    {
+      "case": "gdn2_h32k64v128_b1t2048",
+      "family": "gdn2",
+      "scope": "structural_exploration",
+      "backend": "fixed",
+      "workload": "standard",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 1,
+      "length": 2048,
+      "heads": 32,
+      "head_dim": 64,
+      "value_dim": 128,
+      "hidden_size": 2304,
+      "layers": 18,
+      "parameters": 1709803584,
+      "validation": "full",
+      "trajectory_diagnostic_passed": true,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 1.0361580488640565,
+      "numerical_acceptance": "diagnostic_only_not_enforced",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 51.35864067077637
+        },
+        "optimized": {
+          "backward_ms": 49.566415786743164
+        }
+      },
+      "backward_gain_percent": 3.615804886405649
+    },
+    {
+      "case": "delta_h64k64_b1t2048",
+      "family": "delta",
+      "scope": "structural_exploration",
+      "backend": "fixed",
+      "workload": "standard",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 1,
+      "length": 2048,
+      "heads": 64,
+      "head_dim": 64,
+      "value_dim": 64,
+      "hidden_size": 2048,
+      "layers": 24,
+      "parameters": 1771277824,
+      "validation": "full",
+      "trajectory_diagnostic_passed": false,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 1.0450212249501583,
+      "numerical_acceptance": "diagnostic_only_not_enforced",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 47.40023994445801
+        },
+        "optimized": {
+          "backward_ms": 45.3581600189209
+        }
+      },
+      "backward_gain_percent": 4.502122495015826
+    },
+    {
+      "case": "gdn_h64k64_b1t2048",
+      "family": "gdn",
+      "scope": "structural_exploration",
+      "backend": "wide64",
+      "workload": "standard",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 1,
+      "length": 2048,
+      "heads": 64,
+      "head_dim": 64,
+      "value_dim": 64,
+      "hidden_size": 2048,
+      "layers": 24,
+      "parameters": 1975753216,
+      "validation": "full",
+      "trajectory_diagnostic_passed": true,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 0.9753248329317371,
+      "numerical_acceptance": "diagnostic_only_not_enforced",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 52.087839126586914
+        },
+        "optimized": {
+          "backward_ms": 53.40563201904297
+        }
+      },
+      "backward_gain_percent": -2.4675167068262893
+    },
+    {
+      "case": "gdn2_officialdim_b1t8192",
+      "family": "gdn2",
+      "scope": "official_dimensions_FLA_port",
+      "backend": "fixed",
+      "workload": "standard",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 1,
+      "length": 8192,
+      "heads": 16,
+      "head_dim": 128,
+      "value_dim": 128,
+      "hidden_size": 2304,
+      "layers": 18,
+      "parameters": 1450096416,
+      "validation": "full",
+      "trajectory_diagnostic_passed": true,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 1.06991760939159,
+      "numerical_acceptance": "diagnostic_only_not_enforced",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 163.03135681152344
+        },
+        "optimized": {
+          "backward_ms": 152.3774871826172
+        }
+      },
+      "backward_gain_percent": 6.9917609391590085
+    },
+    {
+      "case": "gdn2_h36k128_b1t2048",
+      "family": "gdn2",
+      "scope": "structural_exploration",
+      "backend": "fixed",
+      "workload": "standard",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 1,
+      "length": 2048,
+      "heads": 36,
+      "head_dim": 128,
+      "value_dim": 128,
+      "hidden_size": 2304,
+      "layers": 18,
+      "parameters": 2099548296,
+      "validation": "full",
+      "trajectory_diagnostic_passed": true,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 1.1275116578155704,
+      "numerical_acceptance": "diagnostic_only_not_enforced",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 76.51959991455078
+        },
+        "optimized": {
+          "backward_ms": 67.86590576171875
+        }
+      },
+      "backward_gain_percent": 12.751165781557038
+    },
+    {
+      "case": "gdn_h32k128_b1t2048_r2",
+      "family": "gdn",
+      "scope": "structural_exploration",
+      "backend": "wide64",
+      "workload": "standard",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 1,
+      "length": 2048,
+      "heads": 32,
+      "head_dim": 128,
+      "value_dim": 128,
+      "hidden_size": 2048,
+      "layers": 24,
+      "parameters": 1972607488,
+      "validation": "full",
+      "trajectory_diagnostic_passed": true,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 1.0270046535264798,
+      "numerical_acceptance": "diagnostic_only_not_enforced",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 53.71700859069824
+        },
+        "optimized": {
+          "backward_ms": 52.304542541503906
+        }
+      },
+      "backward_gain_percent": 2.700465352647985
+    },
+    {
+      "case": "gdn2_h18k128_b1t8192",
+      "family": "gdn2",
+      "scope": "structural_exploration",
+      "backend": "fixed",
+      "workload": "standard",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 1,
+      "length": 8192,
+      "heads": 18,
+      "head_dim": 128,
+      "value_dim": 128,
+      "hidden_size": 2304,
+      "layers": 18,
+      "parameters": 1515041604,
+      "validation": "full",
+      "trajectory_diagnostic_passed": true,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 1.078412787906243,
+      "numerical_acceptance": "diagnostic_only_not_enforced",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 175.99087524414062
+        },
+        "optimized": {
+          "backward_ms": 163.19435119628906
+        }
+      },
+      "backward_gain_percent": 7.841278790624306
+    },
+    {
+      "case": "gdn2_h72k64_b1t2048",
+      "family": "gdn2",
+      "scope": "structural_exploration",
+      "backend": "fixed",
+      "workload": "standard",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 1,
+      "length": 2048,
+      "heads": 72,
+      "head_dim": 64,
+      "value_dim": 64,
+      "hidden_size": 2304,
+      "layers": 18,
+      "parameters": 2083622544,
+      "validation": "full",
+      "trajectory_diagnostic_passed": true,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 1.0796709074984245,
+      "numerical_acceptance": "diagnostic_only_not_enforced",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 71.88459396362305
+        },
+        "optimized": {
+          "backward_ms": 66.58009719848633
+        }
+      },
+      "backward_gain_percent": 7.967090749842454
+    },
+    {
+      "case": "delta_h64k128_b1t2048",
+      "family": "delta",
+      "scope": "structural_exploration",
+      "backend": "fixed",
+      "workload": "standard",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 1,
+      "length": 2048,
+      "heads": 64,
+      "head_dim": 128,
+      "value_dim": 128,
+      "hidden_size": 2048,
+      "layers": 24,
+      "parameters": 2577765376,
+      "validation": "full",
+      "trajectory_diagnostic_passed": false,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 1.0330422996659623,
+      "numerical_acceptance": "diagnostic_only_not_enforced",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 70.64579391479492
+        },
+        "optimized": {
+          "backward_ms": 68.38615798950195
+        }
+      },
+      "backward_gain_percent": 3.3042299665962283
+    },
+    {
+      "case": "gdn_h64k128_b1t2048",
+      "family": "gdn",
+      "scope": "structural_exploration",
+      "backend": "wide64",
+      "workload": "standard",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 1,
+      "length": 2048,
+      "heads": 64,
+      "head_dim": 128,
+      "value_dim": 128,
+      "hidden_size": 2048,
+      "layers": 24,
+      "parameters": 2983567360,
+      "validation": "full",
+      "trajectory_diagnostic_passed": true,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 1.0323485722152044,
+      "numerical_acceptance": "diagnostic_only_not_enforced",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 83.07548522949219
+        },
+        "optimized": {
+          "backward_ms": 80.47232055664062
+        }
+      },
+      "backward_gain_percent": 3.2348572215204374
+    },
+    {
+      "case": "gdn2_h64k128_b1t2048",
+      "family": "gdn2",
+      "scope": "structural_exploration",
+      "backend": "fixed",
+      "workload": "standard",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 1,
+      "length": 2048,
+      "heads": 64,
+      "head_dim": 128,
+      "value_dim": 128,
+      "hidden_size": 2304,
+      "layers": 18,
+      "parameters": 3008780928,
+      "validation": "full",
+      "trajectory_diagnostic_passed": true,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 1.133556275975725,
+      "numerical_acceptance": "diagnostic_only_not_enforced",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 115.0306396484375
+        },
+        "optimized": {
+          "backward_ms": 101.4776611328125
+        }
+      },
+      "backward_gain_percent": 13.355627597572495
+    },
+    {
+      "case": "gdn_h32k64v128_b1t2048_r3",
+      "family": "gdn",
+      "scope": "structural_exploration",
+      "backend": "wide64",
+      "workload": "standard",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 1,
+      "length": 2048,
+      "heads": 32,
+      "head_dim": 64,
+      "value_dim": 128,
+      "hidden_size": 2048,
+      "layers": 24,
+      "parameters": 1770887680,
+      "validation": "full",
+      "trajectory_diagnostic_passed": true,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 0.9934979261712081,
+      "numerical_acceptance": "diagnostic_only_not_enforced",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 45.14713668823242
+        },
+        "optimized": {
+          "backward_ms": 45.44260787963867
+        }
+      },
+      "backward_gain_percent": -0.6502073828791866
+    },
+    {
+      "case": "delta_h64k128_b1t4096",
+      "family": "delta",
+      "scope": "structural_exploration",
+      "backend": "fixed",
+      "workload": "standard",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 1,
+      "length": 4096,
+      "heads": 64,
+      "head_dim": 128,
+      "value_dim": 128,
+      "hidden_size": 2048,
+      "layers": 24,
+      "parameters": 2577765376,
+      "validation": "full",
+      "trajectory_diagnostic_passed": false,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 1.0357038718295006,
+      "numerical_acceptance": "diagnostic_only_not_enforced",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 130.79380798339844
+        },
+        "optimized": {
+          "backward_ms": 126.28494644165039
+        }
+      },
+      "backward_gain_percent": 3.5703871829500633
+    },
+    {
+      "case": "delta_h32k64v128_b1t2048",
+      "family": "delta",
+      "scope": "structural_exploration",
+      "backend": "fixed",
+      "workload": "standard",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 1,
+      "length": 2048,
+      "heads": 32,
+      "head_dim": 64,
+      "value_dim": 128,
+      "hidden_size": 2048,
+      "layers": 24,
+      "parameters": 1567986688,
+      "validation": "full",
+      "trajectory_diagnostic_passed": false,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 1.0233169522616048,
+      "numerical_acceptance": "diagnostic_only_not_enforced",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 40.215471267700195
+        },
+        "optimized": {
+          "backward_ms": 39.29913520812988
+        }
+      },
+      "backward_gain_percent": 2.3316952261604795
+    },
+    {
+      "case": "gdn_h64k128_joint_probe",
+      "family": "gdn",
+      "scope": "structural_exploration",
+      "backend": "liveness",
+      "workload": "standard",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 1,
+      "length": 2048,
+      "heads": 64,
+      "head_dim": 128,
+      "value_dim": 128,
+      "hidden_size": 2048,
+      "layers": 24,
+      "parameters": 2983567360,
+      "validation": "full",
+      "trajectory_diagnostic_passed": true,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 1.0422859276467842,
+      "numerical_acceptance": "diagnostic_only_not_enforced",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 83.1019058227539
+        },
+        "optimized": {
+          "backward_ms": 79.73043060302734
+        }
+      },
+      "backward_gain_percent": 4.228592764678418
+    },
+    {
+      "case": "gdn2_h36k128_b1t8192_confirm",
+      "family": "gdn2",
+      "scope": "structural_exploration",
+      "backend": "fixed",
+      "workload": "standard",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 1,
+      "length": 8192,
+      "heads": 36,
+      "head_dim": 128,
+      "value_dim": 128,
+      "hidden_size": 2304,
+      "layers": 18,
+      "parameters": 2099548296,
+      "validation": "full",
+      "trajectory_diagnostic_passed": true,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 1.1332624960013524,
+      "numerical_acceptance": "diagnostic_only_not_enforced",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 273.12017822265625
+        },
+        "optimized": {
+          "backward_ms": 241.00345611572266
+        }
+      },
+      "backward_gain_percent": 13.326249600135242
+    },
+    {
+      "case": "delta_h64k128_b4t1024_confirm",
+      "family": "delta",
+      "scope": "structural_exploration",
+      "backend": "fixed",
+      "workload": "standard",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 4,
+      "length": 1024,
+      "heads": 64,
+      "head_dim": 128,
+      "value_dim": 128,
+      "hidden_size": 2048,
+      "layers": 24,
+      "parameters": 2577765376,
+      "validation": "full",
+      "trajectory_diagnostic_passed": false,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 1.0310907530760944,
+      "numerical_acceptance": "diagnostic_only_not_enforced",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 130.36869049072266
+        },
+        "optimized": {
+          "backward_ms": 126.43764877319336
+        }
+      },
+      "backward_gain_percent": 3.1090753076094435
+    },
+    {
+      "case": "gdn_base_joint_b1t2048",
+      "family": "gdn",
+      "scope": "published_config",
+      "backend": "liveness",
+      "workload": "standard",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 1,
+      "length": 2048,
+      "heads": 8,
+      "head_dim": 256,
+      "value_dim": 256,
+      "hidden_size": 2048,
+      "layers": 24,
+      "parameters": 1466343808,
+      "validation": "full",
+      "trajectory_diagnostic_passed": true,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 0.9931600077288049,
+      "numerical_acceptance": "diagnostic_only_not_enforced",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 44.558528900146484
+        },
+        "optimized": {
+          "backward_ms": 44.865407943725586
+        }
+      },
+      "backward_gain_percent": -0.6839992271195139
+    },
+    {
+      "case": "gdn_h64k128_joint_b1t4096",
+      "family": "gdn",
+      "scope": "structural_exploration",
+      "backend": "liveness",
+      "workload": "standard",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 1,
+      "length": 4096,
+      "heads": 64,
+      "head_dim": 128,
+      "value_dim": 128,
+      "hidden_size": 2048,
+      "layers": 24,
+      "parameters": 2983567360,
+      "validation": "full",
+      "trajectory_diagnostic_passed": true,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 1.0426961422093768,
+      "numerical_acceptance": "diagnostic_only_not_enforced",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 154.90579223632812
+        },
+        "optimized": {
+          "backward_ms": 148.56273651123047
+        }
+      },
+      "backward_gain_percent": 4.269614220937679
+    },
+    {
+      "case": "gdn2_h36k128_b4t2048_confirm",
+      "family": "gdn2",
+      "scope": "structural_exploration",
+      "backend": "fixed",
+      "workload": "standard",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 4,
+      "length": 2048,
+      "heads": 36,
+      "head_dim": 128,
+      "value_dim": 128,
+      "hidden_size": 2304,
+      "layers": 18,
+      "parameters": 2099548296,
+      "validation": "full",
+      "trajectory_diagnostic_passed": true,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 1.1307944726245214,
+      "numerical_acceptance": "diagnostic_only_not_enforced",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 270.5856018066406
+        },
+        "optimized": {
+          "backward_ms": 239.28804779052734
+        }
+      },
+      "backward_gain_percent": 13.079447262452138
+    },
+    {
+      "case": "delta_h64k128_b1t2048_linear",
+      "family": "delta",
+      "scope": "structural_exploration",
+      "backend": "fixed",
+      "workload": "linear_ce",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 1,
+      "length": 2048,
+      "heads": 64,
+      "head_dim": 128,
+      "value_dim": 128,
+      "hidden_size": 2048,
+      "layers": 24,
+      "parameters": 2577765376,
+      "validation": "full",
+      "trajectory_diagnostic_passed": false,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 1.0338530745004553,
+      "numerical_acceptance": "diagnostic_only_not_enforced",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 69.5497932434082
+        },
+        "optimized": {
+          "backward_ms": 67.27241516113281
+        }
+      },
+      "backward_gain_percent": 3.385307450045527
+    },
+    {
+      "case": "gdn_h64k128_joint_b4t1024_confirm",
+      "family": "gdn",
+      "scope": "structural_exploration",
+      "backend": "liveness",
+      "workload": "standard",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 4,
+      "length": 1024,
+      "heads": 64,
+      "head_dim": 128,
+      "value_dim": 128,
+      "hidden_size": 2048,
+      "layers": 24,
+      "parameters": 2983567360,
+      "validation": "full",
+      "trajectory_diagnostic_passed": true,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 1.041047847492054,
+      "numerical_acceptance": "diagnostic_only_not_enforced",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 154.32041931152344
+        },
+        "optimized": {
+          "backward_ms": 148.23566436767578
+        }
+      },
+      "backward_gain_percent": 4.104784749205392
+    },
+    {
+      "case": "gdn_base_b1t8192",
+      "family": "gdn",
+      "scope": "published_config",
+      "backend": "wide64",
+      "workload": "standard",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 1,
+      "length": 8192,
+      "heads": 8,
+      "head_dim": 256,
+      "value_dim": 256,
+      "hidden_size": 2048,
+      "layers": 24,
+      "parameters": 1466343808,
+      "validation": "full",
+      "trajectory_diagnostic_passed": true,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 1.0468891320162617,
+      "numerical_acceptance": "diagnostic_only_not_enforced",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 153.99383544921875
+        },
+        "optimized": {
+          "backward_ms": 147.0966033935547
+        }
+      },
+      "backward_gain_percent": 4.688913201626166
+    },
+    {
+      "case": "gdn_h64k128_joint_b1t2048_linear",
+      "family": "gdn",
+      "scope": "structural_exploration",
+      "backend": "liveness",
+      "workload": "linear_ce",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 1,
+      "length": 2048,
+      "heads": 64,
+      "head_dim": 128,
+      "value_dim": 128,
+      "hidden_size": 2048,
+      "layers": 24,
+      "parameters": 2983567360,
+      "validation": "full",
+      "trajectory_diagnostic_passed": true,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 1.0423781057441444,
+      "numerical_acceptance": "diagnostic_only_not_enforced",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 82.14875030517578
+        },
+        "optimized": {
+          "backward_ms": 78.80897521972656
+        }
+      },
+      "backward_gain_percent": 4.237810574414436
+    },
+    {
+      "case": "gdn2_h36k128_b1t2048_linear",
+      "family": "gdn2",
+      "scope": "structural_exploration",
+      "backend": "fixed",
+      "workload": "linear_ce",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 1,
+      "length": 2048,
+      "heads": 36,
+      "head_dim": 128,
+      "value_dim": 128,
+      "hidden_size": 2304,
+      "layers": 18,
+      "parameters": 2099548296,
+      "validation": "full",
+      "trajectory_diagnostic_passed": true,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 1.130147724762678,
+      "numerical_acceptance": "diagnostic_only_not_enforced",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 75.3581428527832
+        },
+        "optimized": {
+          "backward_ms": 66.67990493774414
+        }
+      },
+      "backward_gain_percent": 13.014772476267812
+    },
+    {
+      "case": "delta_base_b1t8192",
+      "family": "delta",
+      "scope": "published_config",
+      "backend": "fixed",
+      "workload": "standard",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 1,
+      "length": 8192,
+      "heads": 16,
+      "head_dim": 128,
+      "value_dim": 128,
+      "hidden_size": 2048,
+      "layers": 24,
+      "parameters": 1365677056,
+      "validation": "full",
+      "trajectory_diagnostic_passed": false,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 1.0197997462265511,
+      "numerical_acceptance": "diagnostic_only_not_enforced",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 120.07006454467773
+        },
+        "optimized": {
+          "backward_ms": 117.73886489868164
+        }
+      },
+      "backward_gain_percent": 1.9799746226551118
+    },
+    {
+      "case": "kda_b1t2048gpu0r2",
+      "family": "kda",
+      "scope": "FLA_default_config",
+      "backend": "residual_WY_FP32_endpoint_matrix_intra_separate",
+      "workload": "standard",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 1,
+      "length": 2048,
+      "heads": 16,
+      "head_dim": 128,
+      "value_dim": 128,
+      "hidden_size": 2048,
+      "layers": 24,
+      "parameters": 1390941568,
+      "validation": "full",
+      "trajectory_diagnostic_passed": null,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 1.0896149340887575,
+      "numerical_acceptance": "original_KDA_local_and_trajectory_checks",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 48.67238426208496
+        },
+        "optimized": {
+          "backward_ms": 44.66934394836426
+        }
+      },
+      "backward_gain_percent": 8.961493408875754
+    },
+    {
+      "case": "kda_b1t4096r2",
+      "family": "kda",
+      "scope": "FLA_default_config",
+      "backend": "residual_WY_FP32_endpoint_matrix_intra_separate",
+      "workload": "standard",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 1,
+      "length": 4096,
+      "heads": 16,
+      "head_dim": 128,
+      "value_dim": 128,
+      "hidden_size": 2048,
+      "layers": 24,
+      "parameters": 1390941568,
+      "validation": "full",
+      "trajectory_diagnostic_passed": null,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 1.0947975903681928,
+      "numerical_acceptance": "original_KDA_local_and_trajectory_checks",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 88.00177764892578
+        },
+        "optimized": {
+          "backward_ms": 80.38177871704102
+        }
+      },
+      "backward_gain_percent": 9.47975903681928
+    },
+    {
+      "case": "kda_b2t2048r3",
+      "family": "kda",
+      "scope": "FLA_default_config",
+      "backend": "residual_WY_FP32_endpoint_matrix_intra_separate",
+      "workload": "standard",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 2,
+      "length": 2048,
+      "heads": 16,
+      "head_dim": 128,
+      "value_dim": 128,
+      "hidden_size": 2048,
+      "layers": 24,
+      "parameters": 1390941568,
+      "validation": "full",
+      "trajectory_diagnostic_passed": null,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 1.0972070996615089,
+      "numerical_acceptance": "original_KDA_local_and_trajectory_checks",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 86.15705490112305
+        },
+        "optimized": {
+          "backward_ms": 78.52396774291992
+        }
+      },
+      "backward_gain_percent": 9.720709966150887
+    },
+    {
+      "case": "kda_b1t8192r2",
+      "family": "kda",
+      "scope": "FLA_default_config",
+      "backend": "residual_WY_FP32_endpoint_matrix_intra_separate",
+      "workload": "standard",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 1,
+      "length": 8192,
+      "heads": 16,
+      "head_dim": 128,
+      "value_dim": 128,
+      "hidden_size": 2048,
+      "layers": 24,
+      "parameters": 1390941568,
+      "validation": "full",
+      "trajectory_diagnostic_passed": null,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 1.1005050982575333,
+      "numerical_acceptance": "original_KDA_local_and_trajectory_checks",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 166.5030746459961
+        },
+        "optimized": {
+          "backward_ms": 151.29695892333984
+        }
+      },
+      "backward_gain_percent": 10.050509825753329
+    },
+    {
+      "case": "kda_b2t4096r2",
+      "family": "kda",
+      "scope": "FLA_default_config",
+      "backend": "residual_WY_FP32_endpoint_matrix_intra_separate",
+      "workload": "standard",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 2,
+      "length": 4096,
+      "heads": 16,
+      "head_dim": 128,
+      "value_dim": 128,
+      "hidden_size": 2048,
+      "layers": 24,
+      "parameters": 1390941568,
+      "validation": "full",
+      "trajectory_diagnostic_passed": null,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 1.1026067424408268,
+      "numerical_acceptance": "original_KDA_local_and_trajectory_checks",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 162.50746154785156
+        },
+        "optimized": {
+          "backward_ms": 147.3847885131836
+        }
+      },
+      "backward_gain_percent": 10.26067424408268
+    },
+    {
+      "case": "kda_b4t2048r2",
+      "family": "kda",
+      "scope": "FLA_default_config",
+      "backend": "residual_WY_FP32_endpoint_matrix_intra_separate",
+      "workload": "standard",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 4,
+      "length": 2048,
+      "heads": 16,
+      "head_dim": 128,
+      "value_dim": 128,
+      "hidden_size": 2048,
+      "layers": 24,
+      "parameters": 1390941568,
+      "validation": "full",
+      "trajectory_diagnostic_passed": null,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 1.10381806068795,
+      "numerical_acceptance": "original_KDA_local_and_trajectory_checks",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 161.75084686279297
+        },
+        "optimized": {
+          "backward_ms": 146.53759765625
+        }
+      },
+      "backward_gain_percent": 10.381806068794997
+    },
+    {
+      "case": "kda_b1t16384r2",
+      "family": "kda",
+      "scope": "FLA_default_config",
+      "backend": "residual_WY_FP32_endpoint_matrix_intra_separate",
+      "workload": "standard",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 1,
+      "length": 16384,
+      "heads": 16,
+      "head_dim": 128,
+      "value_dim": 128,
+      "hidden_size": 2048,
+      "layers": 24,
+      "parameters": 1390941568,
+      "validation": "full",
+      "trajectory_diagnostic_passed": null,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 1.1029101306766858,
+      "numerical_acceptance": "original_KDA_local_and_trajectory_checks",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 322.0309600830078
+        },
+        "optimized": {
+          "backward_ms": 291.9829559326172
+        }
+      },
+      "backward_gain_percent": 10.291013067668576
+    },
+    {
+      "case": "kda_b4t4096r2",
+      "family": "kda",
+      "scope": "FLA_default_config",
+      "backend": "residual_WY_FP32_endpoint_matrix_intra_separate",
+      "workload": "standard",
+      "save_policy": "native R; no layer checkpoint",
+      "batch": 4,
+      "length": 4096,
+      "heads": 16,
+      "head_dim": 128,
+      "value_dim": 128,
+      "hidden_size": 2048,
+      "layers": 24,
+      "parameters": 1390941568,
+      "validation": "full",
+      "trajectory_diagnostic_passed": null,
+      "boundary": "whole-model backward CUDA Graph events around loss.backward(); forward/loss and optimizer excluded",
+      "backward_speedup": 1.1030231387837037,
+      "numerical_acceptance": "original_KDA_local_and_trajectory_checks",
+      "execution_checks_passed": true,
+      "device": {
+        "uuid": "GPU-9136d1ab-e6e6-b801-efa5-97098614d2c4",
+        "name": "NVIDIA H100 80GB HBM3",
+        "capability": [
+          9,
+          0
+        ],
+        "total_memory": 85017493504
+      },
+      "variants": {
+        "original": {
+          "backward_ms": 312.5819396972656
+        },
+        "optimized": {
+          "backward_ms": 283.3865661621094
+        }
+      },
+      "backward_gain_percent": 10.302313878370374
+    }
+  ],
+  "model_aggregates": [
+    {
+      "family": "delta",
+      "scope": "published_config",
+      "backend": "fixed",
+      "workload": "standard",
+      "cases": [
+        "delta_base_b1t2048",
+        "delta_base_b1t8192"
+      ],
+      "count": 2,
+      "backward_geomean": 1.0189488875730528,
+      "backward_gain_percent": 1.8948887573052797,
+      "positive_cases": 2
+    },
+    {
+      "family": "delta",
+      "scope": "structural_exploration",
+      "backend": "fixed",
+      "workload": "linear_ce",
+      "cases": [
+        "delta_h64k128_b1t2048_linear"
+      ],
+      "count": 1,
+      "backward_geomean": 1.0338530745004553,
+      "backward_gain_percent": 3.385307450045527,
+      "positive_cases": 1
+    },
+    {
+      "family": "delta",
+      "scope": "structural_exploration",
+      "backend": "fixed",
+      "workload": "standard",
+      "cases": [
+        "delta_h32k64_b1t2048",
+        "delta_h8k256_b1t2048",
+        "delta_h32k128_b1t2048",
+        "delta_h64k64_b1t2048",
+        "delta_h64k128_b1t2048",
+        "delta_h64k128_b1t4096",
+        "delta_h32k64v128_b1t2048",
+        "delta_h64k128_b4t1024_confirm"
+      ],
+      "count": 8,
+      "backward_geomean": 1.0266047253524133,
+      "backward_gain_percent": 2.6604725352413316,
+      "positive_cases": 7
+    },
+    {
+      "family": "gdn",
+      "scope": "published_config",
+      "backend": "liveness",
+      "workload": "standard",
+      "cases": [
+        "gdn_base_joint_b1t2048"
+      ],
+      "count": 1,
+      "backward_geomean": 0.9931600077288049,
+      "backward_gain_percent": -0.6839992271195139,
+      "positive_cases": 0
+    },
+    {
+      "family": "gdn",
+      "scope": "published_config",
+      "backend": "wide64",
+      "workload": "standard",
+      "cases": [
+        "gdn_base_b1t2048",
+        "gdn_base_b1t8192"
+      ],
+      "count": 2,
+      "backward_geomean": 1.044835199435939,
+      "backward_gain_percent": 4.4835199435939055,
+      "positive_cases": 2
+    },
+    {
+      "family": "gdn",
+      "scope": "structural_exploration",
+      "backend": "liveness",
+      "workload": "linear_ce",
+      "cases": [
+        "gdn_h64k128_joint_b1t2048_linear"
+      ],
+      "count": 1,
+      "backward_geomean": 1.0423781057441444,
+      "backward_gain_percent": 4.237810574414436,
+      "positive_cases": 1
+    },
+    {
+      "family": "gdn",
+      "scope": "structural_exploration",
+      "backend": "liveness",
+      "workload": "standard",
+      "cases": [
+        "gdn_h64k128_joint_probe",
+        "gdn_h64k128_joint_b1t4096",
+        "gdn_h64k128_joint_b4t1024_confirm"
+      ],
+      "count": 3,
+      "backward_geomean": 1.0420097368447103,
+      "backward_gain_percent": 4.200973684471032,
+      "positive_cases": 3
+    },
+    {
+      "family": "gdn",
+      "scope": "structural_exploration",
+      "backend": "wide64",
+      "workload": "standard",
+      "cases": [
+        "gdn_h16k128_b1t2048",
+        "gdn_h32k64_b1t2048",
+        "gdn_h64k64_b1t2048",
+        "gdn_h32k128_b1t2048_r2",
+        "gdn_h64k128_b1t2048",
+        "gdn_h32k64v128_b1t2048_r3"
+      ],
+      "count": 6,
+      "backward_geomean": 1.0046392268084439,
+      "backward_gain_percent": 0.46392268084438637,
+      "positive_cases": 3
+    },
+    {
+      "family": "gdn2",
+      "scope": "official_dimensions_FLA_port",
+      "backend": "fixed",
+      "workload": "standard",
+      "cases": [
+        "gdn2_h16k128_b1t2048",
+        "gdn2_officialdim_b1t8192"
+      ],
+      "count": 2,
+      "backward_geomean": 1.065131058158638,
+      "backward_gain_percent": 6.5131058158637956,
+      "positive_cases": 2
+    },
+    {
+      "family": "gdn2",
+      "scope": "structural_exploration",
+      "backend": "fixed",
+      "workload": "linear_ce",
+      "cases": [
+        "gdn2_h36k128_b1t2048_linear"
+      ],
+      "count": 1,
+      "backward_geomean": 1.130147724762678,
+      "backward_gain_percent": 13.014772476267812,
+      "positive_cases": 1
+    },
+    {
+      "family": "gdn2",
+      "scope": "structural_exploration",
+      "backend": "fixed",
+      "workload": "standard",
+      "cases": [
+        "gdn2_base_b1t2048_r4",
+        "gdn2_h36k64_b1t2048",
+        "gdn2_h18k256_b1t2048",
+        "gdn2_h32k64v128_b1t2048",
+        "gdn2_h36k128_b1t2048",
+        "gdn2_h18k128_b1t8192",
+        "gdn2_h72k64_b1t2048",
+        "gdn2_h64k128_b1t2048",
+        "gdn2_h36k128_b1t8192_confirm",
+        "gdn2_h36k128_b4t2048_confirm"
+      ],
+      "count": 10,
+      "backward_geomean": 1.0935782522617397,
+      "backward_gain_percent": 9.357825226173965,
+      "positive_cases": 10
+    },
+    {
+      "family": "kda",
+      "scope": "FLA_default_config",
+      "backend": "residual_WY_FP32_endpoint_matrix_intra_separate",
+      "workload": "standard",
+      "cases": [
+        "kda_b1t2048gpu0r2",
+        "kda_b1t4096r2",
+        "kda_b2t2048r3",
+        "kda_b1t8192r2",
+        "kda_b2t4096r2",
+        "kda_b4t2048r2",
+        "kda_b1t16384r2",
+        "kda_b4t4096r2"
+      ],
+      "count": 8,
+      "backward_geomean": 1.0993001938045168,
+      "backward_gain_percent": 9.930019380451682,
+      "positive_cases": 8
+    }
+  ],
+  "new_accelerator_experiments": false
+}

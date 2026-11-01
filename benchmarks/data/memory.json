@@ -1,0 +1,240 @@
+{
+  "as_of": "2026-10-26",
+  "metric": "six-shape geometric mean of baseline/candidate median latency",
+  "boundary": "complete low-level chunk backward",
+  "saving_order": [
+    "recompute",
+    "all"
+  ],
+  "records": [
+    {
+      "operator": "DeltaNet",
+      "device": "GPU",
+      "device_name": "RTX 5070 Ti Laptop",
+      "implementation": "unified chunk adjoint",
+      "B_R_A": [
+        1.1469,
+        1.2152
+      ],
+      "reference_peak_MiB_R_A": [
+        417.25,
+        257.25
+      ],
+      "optimized_peak_MiB_R_A": [
+        417.25,
+        257.25
+      ],
+      "resident_workspace_MiB_per_stream": 0
+    },
+    {
+      "operator": "GDN",
+      "device": "GPU",
+      "device_name": "RTX 5070 Ti Laptop",
+      "implementation": "unified chunk adjoint with Gram elimination",
+      "B_R_A": [
+        1.1614,
+        1.2264
+      ],
+      "reference_peak_MiB_R_A": [
+        418.25,
+        258.25
+      ],
+      "optimized_peak_MiB_R_A": [
+        417.75,
+        257.75
+      ],
+      "resident_workspace_MiB_per_stream": 0
+    },
+    {
+      "operator": "KDA",
+      "device": "GPU",
+      "device_name": "RTX 5070 Ti Laptop",
+      "implementation": "residual WY + matrix intra, joint streamed consumer and full-key column-state schedule",
+      "B_R_A": [
+        1.556,
+        1.8066
+      ],
+      "reference_peak_MiB_R_A": [
+        772.0,
+        548.0
+      ],
+      "optimized_peak_MiB_R_A": [
+        641.5,
+        417.5
+      ],
+      "resident_workspace_MiB_per_stream": 0
+    },
+    {
+      "operator": "GDN2",
+      "device": "GPU",
+      "device_name": "RTX 5070 Ti Laptop",
+      "implementation": "residual WY + matrix intra, joint consumer and full-key column-state schedule",
+      "B_R_A": [
+        1.791,
+        2.1458
+      ],
+      "reference_peak_MiB_R_A": [
+        961.0,
+        737.0
+      ],
+      "optimized_peak_MiB_R_A": [
+        833.0,
+        609.0
+      ],
+      "resident_workspace_MiB_per_stream": 0
+    },
+    {
+      "operator": "DeltaNet",
+      "device": "NPU",
+      "device_name": "Ascend910_9382",
+      "implementation": "unified chunk adjoint",
+      "B_R_A": [
+        1.5806,
+        1.7528
+      ],
+      "reference_peak_MiB_R_A": [
+        610.508,
+        450.505
+      ],
+      "optimized_peak_MiB_R_A": [
+        518.383,
+        358.38
+      ],
+      "resident_workspace_MiB_per_stream": 0
+    },
+    {
+      "operator": "GDN",
+      "device": "NPU",
+      "device_name": "Ascend910_9382",
+      "implementation": "shared residual adjoint + Gram elimination, separate Vector gate completion, fixed NK64/NV128",
+      "B_R_A": [
+        1.3739,
+        1.5142
+      ],
+      "reference_peak_MiB_R_A": [
+        612.51,
+        452.508
+      ],
+      "optimized_peak_MiB_R_A": [
+        520.636,
+        360.634
+      ],
+      "resident_workspace_MiB_per_stream": 0
+    },
+    {
+      "operator": "KDA",
+      "device": "NPU",
+      "device_name": "Ascend910_9382",
+      "implementation": "residual WY + matrix intra, no global direct-erase storage",
+      "B_R_A": [
+        1.5464,
+        1.6291
+      ],
+      "reference_peak_MiB_R_A": [
+        824.511,
+        600.509
+      ],
+      "optimized_peak_MiB_R_A": [
+        773.009,
+        549.006
+      ],
+      "resident_workspace_MiB_per_stream": 16
+    },
+    {
+      "operator": "GDN2",
+      "device": "NPU",
+      "device_name": "Ascend910_9382",
+      "implementation": "full on-chip residual WY + matrix intra, separate",
+      "B_R_A": [
+        2.5518,
+        2.9959
+      ],
+      "reference_peak_MiB_R_A": [
+        1015.262,
+        791.259
+      ],
+      "optimized_peak_MiB_R_A": [
+        770.007,
+        546.004
+      ],
+      "resident_workspace_MiB_per_stream": 0
+    },
+    {
+      "operator": "DeltaNet",
+      "device": "A800",
+      "device_name": "A800-SXM4-80GB",
+      "implementation": "unified residual adjoint; original K64 state body, BV16/4 warps/3 stages; NK32/4 warps/2 stages consumer",
+      "B_R_A": [
+        1.1474,
+        1.2237
+      ],
+      "reference_peak_MiB_R_A": [
+        417.25,
+        257.25
+      ],
+      "optimized_peak_MiB_R_A": [
+        385.25,
+        225.25
+      ],
+      "resident_workspace_MiB_per_stream": 0
+    },
+    {
+      "operator": "GDN",
+      "device": "A800",
+      "device_name": "A800-SXM4-80GB",
+      "implementation": "unified residual adjoint with Gram elimination and shortened live ranges; original state autotune",
+      "B_R_A": [
+        1.1732,
+        1.2471
+      ],
+      "reference_peak_MiB_R_A": [
+        418.25,
+        258.25
+      ],
+      "optimized_peak_MiB_R_A": [
+        385.75,
+        225.75
+      ],
+      "resident_workspace_MiB_per_stream": 0
+    },
+    {
+      "operator": "KDA",
+      "device": "A800",
+      "device_name": "A800-SXM4-80GB",
+      "implementation": "residual WY + matrix intra, separate scheduling",
+      "B_R_A": [
+        1.7943,
+        2.0832
+      ],
+      "reference_peak_MiB_R_A": [
+        772.0,
+        548.0
+      ],
+      "optimized_peak_MiB_R_A": [
+        641.531,
+        417.531
+      ],
+      "resident_workspace_MiB_per_stream": 0
+    },
+    {
+      "operator": "GDN2",
+      "device": "A800",
+      "device_name": "A800-SXM4-80GB",
+      "implementation": "residual WY + matrix intra, separate scheduling",
+      "B_R_A": [
+        1.9577,
+        2.2792
+      ],
+      "reference_peak_MiB_R_A": [
+        961.0,
+        737.0
+      ],
+      "optimized_peak_MiB_R_A": [
+        801.0,
+        577.0
+      ],
+      "resident_workspace_MiB_per_stream": 0
+    }
+  ],
+  "selection": "Highest validated complete-backward aggregate speedup under the fixed contract; one implementation per operator/backend."
+}

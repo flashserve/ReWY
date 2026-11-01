@@ -1,0 +1,46 @@
+cff-version: 1.2.0
+message: "If you use ReWY, please cite the manuscript and software artifact."
+type: software
+title: "ReWY: Faster Gradient Computation for Delta-Rule Attention Family"
+version: 0.1.0
+authors:
+  - family-names: Zhang
+    given-names: Yi
+  - family-names: Zhao
+    given-names: Zhixin
+  - family-names: Sun
+    given-names: Weiwei
+  - family-names: Hu
+    given-names: Yitao
+  - family-names: Chen
+    given-names: Sheng
+  - family-names: Li
+    given-names: Keqiu
+repository-code: "https://github.com/flashserve/ReWY"
+url: "https://github.com/flashserve/ReWY"
+license: MIT
+keywords:
+  - linear attention
+  - delta rule
+  - backward kernels
+  - Triton
+  - Ascend
+preferred-citation:
+  type: unpublished
+  title: "ReWY: Faster Gradient Computation for Delta-Rule Attention Family"
+  authors:
+    - family-names: Zhang
+      given-names: Yi
+    - family-names: Zhao
+      given-names: Zhixin
+    - family-names: Sun
+      given-names: Weiwei
+    - family-names: Hu
+      given-names: Yitao
+    - family-names: Chen
+      given-names: Sheng
+    - family-names: Li
+      given-names: Keqiu
+  year: 2026
+  url: "https://github.com/flashserve/ReWY"
+  notes: "Manuscript and software artifact."

@@ -1,0 +1,12 @@
+{
+  "a800": {
+    "image": "zhangyi2026/residual-wy-a800:20261030-paper",
+    "digest": "sha256:6ff3251ceea9f227b48aa09cf7f44e58efc7ad4824c2aabea28e4bce1c694631",
+    "platform": "linux/amd64"
+  },
+  "ascend9382": {
+    "image": "zhangyi2026/residual-wy-ascend9382:20261030-paper",
+    "digest": "sha256:d4374e36f6cff239e3d836d75c3e7bc01f55cbd086d0ef23f41d79f947df80c5",
+    "platform": "linux/arm64"
+  }
+}

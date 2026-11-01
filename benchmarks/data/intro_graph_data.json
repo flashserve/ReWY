@@ -1,0 +1,204 @@
+{
+  "nodes": {
+    "b_r": {
+      "x": 5.0,
+      "y": 7.55,
+      "w": 1.1,
+      "h": 0.52,
+      "label": "$\\bar R$",
+      "kind": "input",
+      "gemms": 0
+    },
+    "b_w": {
+      "x": 1.65,
+      "y": 6.35,
+      "w": 2.8,
+      "h": 0.74,
+      "label": "$\\bar W=-\\bar R S^\\top$",
+      "kind": "removed",
+      "gemms": 1
+    },
+    "b_rz": {
+      "x": 5.0,
+      "y": 6.35,
+      "w": 2.25,
+      "h": 0.74,
+      "label": "$T_Z=\\bar R Z^\\top$",
+      "kind": "product",
+      "gemms": 1
+    },
+    "b_z": {
+      "x": 8.15,
+      "y": 6.35,
+      "w": 2.45,
+      "h": 0.74,
+      "label": "$\\bar Z=A^\\top\\bar R$",
+      "kind": "output",
+      "gemms": 1
+    },
+    "b_e": {
+      "x": 1.65,
+      "y": 4.78,
+      "w": 2.85,
+      "h": 0.74,
+      "label": "$\\bar E_{\\rm dir}=A^\\top\\bar W$",
+      "kind": "output",
+      "gemms": 1
+    },
+    "b_we": {
+      "x": 4.95,
+      "y": 4.78,
+      "w": 2.5,
+      "h": 0.74,
+      "label": "$T_E=\\bar W E^\\top$",
+      "kind": "product",
+      "gemms": 1
+    },
+    "b_a": {
+      "x": 7.85,
+      "y": 3.5,
+      "w": 2.75,
+      "h": 0.74,
+      "label": "$\\bar A=T_Z+T_E$",
+      "kind": "removed",
+      "gemms": 0
+    },
+    "b_left": {
+      "x": 5.15,
+      "y": 2.16,
+      "w": 2.15,
+      "h": 0.74,
+      "label": "$J=A^\\top\\bar A$",
+      "kind": "product",
+      "gemms": 1
+    },
+    "b_d": {
+      "x": 8.0,
+      "y": 0.99,
+      "w": 2.95,
+      "h": 0.74,
+      "label": "$D=-\\mathcal{L}_{<}(JA^\\top)$",
+      "kind": "output",
+      "gemms": 1
+    },
+    "r_r": {
+      "x": 13.25,
+      "y": 7.55,
+      "w": 1.1,
+      "h": 0.52,
+      "label": "$\\bar R$",
+      "kind": "input",
+      "gemms": 0
+    },
+    "r_p": {
+      "x": 13.25,
+      "y": 6.35,
+      "w": 2.8,
+      "h": 0.86,
+      "label": "$P=A^\\top\\bar R$",
+      "kind": "shared",
+      "gemms": 1
+    },
+    "r_z": {
+      "x": 11.25,
+      "y": 4.8,
+      "w": 2.0,
+      "h": 0.74,
+      "label": "$\\bar Z=P$",
+      "kind": "output",
+      "gemms": 0
+    },
+    "r_e": {
+      "x": 15.3,
+      "y": 4.8,
+      "w": 2.9,
+      "h": 0.74,
+      "label": "$\\bar E_{\\rm dir}=-PS^\\top$",
+      "kind": "output",
+      "gemms": 1
+    },
+    "r_d": {
+      "x": 13.25,
+      "y": 2.65,
+      "w": 3.45,
+      "h": 0.86,
+      "label": "$D=-\\mathcal{L}_{<}(PR^\\top)$",
+      "kind": "output",
+      "gemms": 1
+    },
+    "r_forward": {
+      "x": 10.45,
+      "y": 2.65,
+      "w": 0.8,
+      "h": 0.52,
+      "label": "$R$",
+      "kind": "input",
+      "gemms": 0
+    }
+  },
+  "edges": [
+    [
+      "b_r",
+      "b_w"
+    ],
+    [
+      "b_r",
+      "b_rz"
+    ],
+    [
+      "b_r",
+      "b_z"
+    ],
+    [
+      "b_w",
+      "b_e"
+    ],
+    [
+      "b_w",
+      "b_we"
+    ],
+    [
+      "b_rz",
+      "b_a"
+    ],
+    [
+      "b_we",
+      "b_a"
+    ],
+    [
+      "b_a",
+      "b_left"
+    ],
+    [
+      "b_left",
+      "b_d"
+    ],
+    [
+      "r_r",
+      "r_p"
+    ],
+    [
+      "r_p",
+      "r_z"
+    ],
+    [
+      "r_p",
+      "r_e"
+    ],
+    [
+      "r_p",
+      "r_d"
+    ],
+    [
+      "r_forward",
+      "r_d"
+    ]
+  ],
+  "expanded_products": 7,
+  "residual_products": 3,
+  "unchanged_downstream": [
+    "D Y",
+    "D^T E",
+    "state adjoint"
+  ]
+}

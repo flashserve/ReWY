@@ -1,0 +1,2 @@
+from fast_delta_rule.kernels.kda_intra_npu9382 import kda_intra
+from fast_delta_rule.kernels.gdn2_intra_npu9382 import gdn2_intra

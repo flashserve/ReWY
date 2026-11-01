@@ -1,0 +1,11 @@
+.git
+build
+dist
+results
+__pycache__
+*.egg-info
+.venv
+.DS_Store
+paper
+backup
+.env

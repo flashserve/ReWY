@@ -1,0 +1,8 @@
+{
+  "date": "2026-11-01",
+  "complete_operator_speedups": "Display measured aggregate ratios > 1; retain all six shapes in every aggregate",
+  "a800_model_table": "Display individual recorded configurations with backward_speedup > 1",
+  "hopper_model_table": "Display fixed-architecture family/backend/workload groups whose complete aggregate ratio > 1 on both H100 and H200",
+  "component_memory": "Display operator/device rows only when all four measured effects are >= 0",
+  "within_group_sample_or_case_filtering": false
+}

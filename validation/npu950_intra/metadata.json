@@ -1,0 +1,36 @@
+{
+  "kda": {
+    "selection": "B0, final C64, heads [0,2,7,15], all K128",
+    "dtypes": {
+      "q": "torch.bfloat16",
+      "k": "torch.bfloat16",
+      "g": "torch.float32",
+      "beta": "torch.float32",
+      "dAqk": "torch.float32",
+      "dAkk": "torch.float32",
+      "dq": "torch.float32",
+      "dk": "torch.float32",
+      "db": "torch.float32",
+      "dg": "torch.float32"
+    },
+    "fixture_sha256": "e389ad0eff34d0148be6355abf41f41bd7bc76348f0dccf08064e9fcbe2056e3",
+    "transport": "FP32 numpy; BF16 values exactly representable, restored before NPU call"
+  },
+  "gdn2": {
+    "selection": "B0, final C64, heads [0,2,7,15], all K128",
+    "dtypes": {
+      "q": "torch.bfloat16",
+      "k": "torch.bfloat16",
+      "g": "torch.float32",
+      "b": "torch.bfloat16",
+      "dAqk": "torch.float32",
+      "dAkk": "torch.float32",
+      "dq": "torch.float32",
+      "dk": "torch.float32",
+      "db": "torch.float32",
+      "dg": "torch.float32"
+    },
+    "fixture_sha256": "a2eb64b6c91ea42b04ae7787dbd2215237e45e2ef8eb58c3a5711b781a924d51",
+    "transport": "FP32 numpy; BF16 values exactly representable, restored before NPU call"
+  }
+}

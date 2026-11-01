@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=77", "setuptools-scm>=8", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fast-delta-rule"
+version = "0.1.0"
+description = "ReWY: Faster Gradient Computation for the Delta-Rule Attention Family"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
+authors = [{name = "fast-delta-rule contributors"}]
+dependencies = []
+
+[project.optional-dependencies]
+cuda = ["torch==2.9.1", "triton==3.5.1", "einops==0.8.2", "transformers==5.21.0", "flash-linear-attention @ git+https://github.com/fla-org/flash-linear-attention.git@a59bc5df8c5841dce2169bb00e4027287197ba77"]
+npu = ["einops==0.8.2", "transformers==5.21.0", "flash-linear-attention @ git+https://github.com/fla-org/flash-linear-attention.git@a59bc5df8c5841dce2169bb00e4027287197ba77"]
+test = ["pytest>=8", "build", "numpy>=1.24"]
+
+[project.scripts]
+fdr = "fast_delta_rule.cli:main"
+rwy = "fast_delta_rule.cli:main"
+
+[project.urls]
+Repository = "https://github.com/flashserve/ReWY"
+Documentation = "https://github.com/flashserve/ReWY/blob/main/docs/README.md"
+Issues = "https://github.com/flashserve/ReWY/issues"
+Benchmarks = "https://github.com/flashserve/ReWY/tree/main/benchmarks"
+
+[tool.setuptools]
+include-package-data = false
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+fast_delta_rule = ["baseline.json", "suites/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["accelerator: requires the pinned FLA and CUDA or Ascend hardware"]

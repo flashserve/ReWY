@@ -1,0 +1,19 @@
+# No cross-architecture RUN instructions; CANN and the driver are mounted at run time.
+ARG BASE_IMAGE=openeuler/openeuler:22.03-lts-sp4@sha256:704656ffaa8ed5dee5c2b7f6b612bb612eee00b5372b469a50ff8b1ea9abb534
+FROM ${BASE_IMAGE}
+ADD runtime.tar.gz /tmp/zhangyi_kda_residual_wy_20261023/
+ADD model-deps.tar.gz /opt/model-deps/
+ADD plot-deps.tar.gz /opt/plot-deps/
+ADD toolchain.tar.gz /
+ADD artifact.tar.gz /opt/fast-delta-rule/
+ADD fla.tar.gz /opt/fla/
+COPY libkda_residual_native.so /opt/fdr-native/libkda_residual_native.so
+COPY runtime-manifest.json /opt/runtime-manifest.json
+COPY --chmod=755 entrypoint.sh /opt/paper-entrypoint.sh
+ENV FDR_PAPER_PLATFORM=ascend9382
+WORKDIR /opt/fast-delta-rule
+LABEL org.opencontainers.image.source="https://github.com/flashserve/ReWY" \
+      org.opencontainers.image.title="Ascend910_9382 current-paper reproduction" \
+      org.opencontainers.image.description="Linux arm64, Python 3.11.17, Torch 2.7.1+cpu, TorchNPU 2.7.1.post4; requires host CANN 9.0.0-beta.1 and matching Ascend driver."
+ENTRYPOINT ["/opt/paper-entrypoint.sh"]
+CMD ["plan"]
