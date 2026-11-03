@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use ReWY, please cite the manuscript and software artifact."
 type: software
-title: "ReWY: Faster Gradient Computation for Delta-Rule Attention Family"
+title: "ReWY: Faster Backpropagation for Delta-Rule Attention — From 7 to 3 Matrix Multiplications"
 version: 0.1.0
 authors:
   - family-names: Zhang
@@ -27,7 +27,7 @@ keywords:
   - Ascend
 preferred-citation:
   type: unpublished
-  title: "ReWY: Faster Gradient Computation for Delta-Rule Attention Family"
+  title: "ReWY: Faster Backpropagation for Delta-Rule Attention — From 7 to 3 Matrix Multiplications"
   authors:
     - family-names: Zhang
       given-names: Yi
