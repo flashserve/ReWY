@@ -1,4 +1,4 @@
-# ReWY: Faster Gradient Computation for Delta-Rule Attention Family
+# ReWY: Faster Backpropagation for Delta-Rule Attention — From 7 to 3 Matrix Multiplications
 
 ReWY 在不改变模型递推和训练目标的前提下，加速 **DeltaNet、Gated DeltaNet（GDN）、
 Kimi Delta Attention（KDA）和 GDN2** 的反向计算。本仓库提供论文的算子实现、
@@ -158,7 +158,7 @@ python benchmarks/plotting/make_figures.py --output-dir results/paper-figures
 
 ```bibtex
 @misc{zhang2026fasterdelta,
-  title  = {ReWY: Faster Gradient Computation for Delta-Rule Attention Family},
+  title  = {ReWY: Faster Backpropagation for Delta-Rule Attention — From 7 to 3 Matrix Multiplications},
   author = {Yi Zhang and Zhixin Zhao and Weiwei Sun and Yitao Hu and Sheng Chen and Keqiu Li},
   year   = {2026},
   url    = {https://github.com/flashserve/ReWY},

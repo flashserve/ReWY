@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "fast-delta-rule"
 version = "0.1.0"
-description = "ReWY: Faster Gradient Computation for the Delta-Rule Attention Family"
+description = "ReWY: Faster Backpropagation for Delta-Rule Attention — From 7 to 3 Matrix Multiplications"
 readme = "README.md"
 requires-python = ">=3.11"
 license = "MIT"
